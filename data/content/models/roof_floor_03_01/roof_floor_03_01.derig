@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<hull>
+		<position x='0' y='0' z='0'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<point x='5.101' y='-0.06444' z='2.816'/>
+		<point x='5.101' y='1.547' z='-0.006234'/>
+		<point x='5.101' y='-0.06444' z='-2.826'/>
+		<point x='-5.1' y='-0.06444' z='2.816'/>
+		<point x='-5.1' y='1.547' z='-0.006234'/>
+		<point x='-5.1' y='-0.06444' z='-2.826'/>
+		<property>roof_tiles_01</property>
+	</hull>
+	<hull>
+		<position x='0.0035' y='-0.002699' z='-10.97'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<point x='5.101' y='-0.06309' z='2.837'/>
+		<point x='5.101' y='1.55' z='0.003177'/>
+		<point x='5.101' y='-0.06309' z='-2.835'/>
+		<point x='-5.187' y='-0.06309' z='2.837'/>
+		<point x='-5.187' y='1.55' z='0.003177'/>
+		<point x='-5.187' y='-0.06309' z='-2.835'/>
+		<property>roof_tiles_01</property>
+	</hull>
+	<hull>
+		<position x='-10.19' y='0' z='-10.98'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<point x='5.004' y='-0.06578' z='2.842'/>
+		<point x='5.004' y='1.547' z='0.007777'/>
+		<point x='5.004' y='-0.06578' z='-2.83'/>
+		<point x='-4.803' y='-0.06578' z='2.842'/>
+		<point x='-4.803' y='1.547' z='0.007777'/>
+		<point x='-4.803' y='-0.06578' z='-2.83'/>
+		<property>roof_tiles_01</property>
+	</hull>
+	<box>
+		<position x='0.01668' y='1.405' z='2.977'/>
+		<halfExtends x='5.228' y='1.683' z='0.2'/>
+		<rotation x='0' y='-0' z='-0'/>
+	</box>
+	<box>
+		<position x='5.248' y='1.405' z='0.2391'/>
+		<halfExtends x='3.019' y='1.683' z='0.2'/>
+		<rotation x='0' y='90' z='-0'/>
+	</box>
+</rig>

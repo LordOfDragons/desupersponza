@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<elementClass name="lionhead" class="SimpleElement">
+	<string name="component.model">lionhead.demodel</string>
+	<string name="component.rig">lionhead.derig</string>
+	<string name="component.audioModel">lionhead.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="lionhead_01">
+			<string key="skin">/content/materials/lionhead_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

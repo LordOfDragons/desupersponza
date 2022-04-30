@@ -1,0 +1,164 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Commands
+pin Dragengine.Gui.Layouts
+pin Dragengine.Gui.Events
+pin Dragengine.Scenery
+pin Dragengine.Preloading
+pin Dragengine.Utils
+pin Dragengine.TriggerSystem
+
+
+/**
+ * Game models. Used to allow two menu windows to share the same state.
+ */
+class GameModels
+	/**
+	 * Toggle model listener fire/reset trigger target.
+	 */
+	class ToggleTriggerTarget extends DefaultToggleModelListener
+		private var TSTriggerTarget target
+		
+		public func new(ToggleModel model, String targetName)
+			target = GameApp.getApp().getTriggerTable().getOrAddNamed(StringID.new(targetName))
+			toggledChanged(model)
+		end
+		
+		public func void toggledChanged(ToggleModel model)
+			if model.getToggled()
+				target.fire()
+			else
+				target.reset()
+			end
+		end
+	end
+	
+	/**
+	 * Sky day time slider changed.
+	 */
+	public class SkyDayTimeSliderChanged extends DefaultRangeModelListener
+		public func new()
+		end
+		
+		public func void valueChanged(RangeModel rangeModel)
+			GameModels.get().updateDayTimeSky()
+		end
+	end
+	
+	
+	public var ECBehaviorDayTimeSky.Instance dayTimeSky
+	public var DefaultRangeModel modelDayTimeSky
+	public var DefaultToggleModel modelShowFPSRates
+	public var DefaultToggleModel modelShowCurtains
+	public var DefaultToggleModel modelLampF0RightWing
+	public var DefaultToggleModel modelLampF0LeftWing
+	public var DefaultToggleModel modelLampF0Entrance
+	public var DefaultToggleModel modelLampF0LionHead
+	public var DefaultToggleModel modelLampF1RightWing
+	public var DefaultToggleModel modelLampF1LeftWing
+	public var DefaultToggleModel modelEnableVR
+	public var TSTriggerTarget triggerDaytimeDay
+	
+	
+	/**
+	 * Create game models.
+	 */
+	public func new()
+		triggerDaytimeDay = GameApp.get().getTriggerTable().getOrAddNamed(StringID.new("daytime.day"))
+		
+		modelDayTimeSky = DefaultRangeModel.new(0, 60 * 24, 60, 60 * 11, 1)
+		modelDayTimeSky.addListener(SkyDayTimeSliderChanged.new())
+		
+		modelShowFPSRates = DefaultToggleModel.new(false)
+		modelShowFPSRates.addListener(ToggleTriggerTarget.new(modelShowFPSRates, "ui.fpsrates.show"))
+		
+		modelShowCurtains = DefaultToggleModel.new(true)
+		modelShowCurtains.addListener(ToggleTriggerTarget.new(modelShowCurtains, "curtains.show"))
+		
+		modelLampF0RightWing = DefaultToggleModel.new(false)
+		modelLampF0RightWing.addListener(ToggleTriggerTarget.new(modelLampF0RightWing, "lights.floor0.rightwing"))
+		
+		modelLampF0LeftWing = DefaultToggleModel.new(false)
+		modelLampF0LeftWing.addListener(ToggleTriggerTarget.new(modelLampF0LeftWing, "lights.floor0.leftwing"))
+		
+		modelLampF0Entrance = DefaultToggleModel.new(false)
+		modelLampF0Entrance.addListener(ToggleTriggerTarget.new(modelLampF0Entrance, "lights.floor0.entrance"))
+		
+		modelLampF0LionHead = DefaultToggleModel.new(false)
+		modelLampF0LionHead.addListener(ToggleTriggerTarget.new(modelLampF0LionHead, "lights.floor0.lionhead"))
+		
+		modelLampF1RightWing = DefaultToggleModel.new(false)
+		modelLampF1RightWing.addListener(ToggleTriggerTarget.new(modelLampF1RightWing, "lights.floor1.rightwing"))
+		
+		modelLampF1LeftWing = DefaultToggleModel.new(false)
+		modelLampF1LeftWing.addListener(ToggleTriggerTarget.new(modelLampF1LeftWing, "lights.floor1.leftwing"))
+		
+		modelEnableVR = DefaultToggleModel.new(false)
+		modelEnableVR.addListener(ToggleTriggerTarget.new(modelEnableVR, "lights.floor1.leftwing"))
+	end
+	
+	/**
+	 * Get game models.
+	 */
+	static public func GameModels get()
+		return GameApp.get().getGameModels()
+	end
+	
+	
+	/**
+	 * Update day time sky.
+	 */
+	public func void updateDayTimeSky()
+		if dayTimeSky == null
+			return
+		end
+		
+		var float daytime = modelDayTimeSky.getValue() cast float / 60.0
+		dayTimeSky.setDayTime(daytime)
+		
+		if daytime > 6 and daytime < 22
+			triggerDaytimeDay.fire()
+		else
+			triggerDaytimeDay.reset()
+		end
+	end
+	
+	/**
+	 * Game world changed.
+	 */
+	public func void onGameWorldChanged(GameWorld gameWorld)
+		dayTimeSky = null
+		if gameWorld != null
+			gameWorld.findElement(block Element element
+				if element castable BehaviorElement
+					dayTimeSky = ECBehaviorDayTimeSky.getInstanceIn(element cast BehaviorElement)
+				end
+				return dayTimeSky != null
+			end)
+		end
+		
+		updateDayTimeSky()
+	end
+end

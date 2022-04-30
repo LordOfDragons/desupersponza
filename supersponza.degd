@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gameDefinition>
+	<identifier>supersponza</identifier>
+	<description>Game project supersponza.</description>
+	<basePath>/home/roland/progs/experiments/supersponza/data</basePath>
+	<vfsPath>/</vfsPath>
+	<scriptModule>DragonScript</scriptModule>
+	<baseGameDefinition>DragonScript Basic</baseGameDefinition>
+	<categories>
+		<classes>
+			<category>
+				<name>Project</name>
+				<description>Project models.</description>
+				<autoCategorize>/content/models/*</autoCategorize>
+			</category>
+		</classes>
+		<skins>
+			<category>
+				<name>Project</name>
+				<description>Project materials.</description>
+				<autoCategorize>/content/materials/*</autoCategorize>
+			</category>
+		</skins>
+		<skies>
+			<category>
+				<name>Project</name>
+				<description>Project skies.</description>
+				<autoCategorize>/content/skies/*</autoCategorize>
+			</category>
+		</skies>
+	</categories>
+	<findPathClasses>/content/models</findPathClasses>
+	<findPathSkins>/content/materials</findPathSkins>
+	<findPathSkies>/content/skies</findPathSkies>
+	<defaultClass>IGDEElement</defaultClass>
+	<defaultSkin>/igde/materials/stoneFloor/material.deskin</defaultSkin>
+	<defaultSky>/igde/skies/static.desky</defaultSky>
+	<class name='SSElement'>
+		<description>Super sponza element class. Contains various behaviors used across elements.</description>
+		<inherit name='SimpleElement'>
+		</inherit>
+		<property name='trigger(show)'>
+			<description>Show/hide element using trigger expression.</description>
+			<type>triggerExpression</type>
+		</property>
+		<category>Project</category>
+	</class>
+	<class name='SSLamp'>
+		<description>Super sponza lamp</description>
+		<inherit name='SSElement'>
+		</inherit>
+		<inherit name='ECBehaviorLight'>
+			<propertyPrefix>light.</propertyPrefix>
+		</inherit>
+		<inherit name='ECBehaviorDynamicSkin'>
+			<propertyPrefix>dynamicSkin.</propertyPrefix>
+		</inherit>
+		<inherit name='ECBehaviorRenderableLight'>
+			<propertyPrefix>renderableLight.</propertyPrefix>
+		</inherit>
+		<category>Project</category>
+	</class>
+</gameDefinition>

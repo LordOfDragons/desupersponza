@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0' y='0' z='2.739'/>
+		<halfExtends x='8.92' y='0.2618' z='0.1153'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>stone_trims_01</property>
+	</box>
+	<box>
+		<position x='0' y='0' z='-2.739'/>
+		<halfExtends x='8.92' y='0.2618' z='0.1153'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>stone_trims_01</property>
+	</box>
+	<box>
+		<position x='8.793' y='0' z='7.055e-08'/>
+		<halfExtends x='2.834' y='0.2618' z='0.1153'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>stone_trims_01</property>
+	</box>
+	<box>
+		<position x='-7.142' y='0' z='7.055e-08'/>
+		<halfExtends x='2.834' y='0.2618' z='0.1153'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>stone_trims_01</property>
+	</box>
+</rig>

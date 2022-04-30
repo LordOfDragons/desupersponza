@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<elementClass name="arch_wall_2ndfloor" class="SimpleElement">
+	<string name="component.model">arch_wall_2ndfloor.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.audioModel">arch_wall_2ndfloor.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="brickwall_01">
+			<string key="skin">/content/materials/brickwall_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

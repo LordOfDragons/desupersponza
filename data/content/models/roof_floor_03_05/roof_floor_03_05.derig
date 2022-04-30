@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-1.64' y='0.1715' z='-0.03456'/>
+		<halfExtends x='5.72' y='0.1' z='1.568'/>
+		<rotation x='-29.8' y='90' z='-2.58e-07'/>
+		<property>roof_tiles_01</property>
+	</box>
+	<box>
+		<position x='0.9822' y='0.1715' z='-0.1567'/>
+		<halfExtends x='2.698' y='0.1' z='1.568'/>
+		<rotation x='-29.8' y='-90' z='2.52e-06'/>
+		<property>roof_tiles_01</property>
+	</box>
+	<box>
+		<position x='0.1111' y='1.283' z='1.138'/>
+		<halfExtends x='0.3277' y='0.7772' z='0.3485'/>
+		<rotation x='0' y='-1e-05' z='-0'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-0.1203' y='-0.1636' z='3.86'/>
+		<halfExtends x='0.1758' y='0.9332' z='1.458'/>
+		<rotation x='0' y='-1e-05' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.1245' y='0.805' z='3.924'/>
+		<halfExtends x='1.392' y='0.1' z='0.2929'/>
+		<rotation x='-29.8' y='-90' z='2.52e-06'/>
+		<property>roof_tiles_01</property>
+	</box>
+	<box>
+		<position x='-0.1245' y='0.805' z='-4.142'/>
+		<halfExtends x='1.349' y='0.1' z='0.2929'/>
+		<rotation x='-29.8' y='-90' z='2.52e-06'/>
+		<property>roof_tiles_01</property>
+	</box>
+	<box>
+		<position x='-0.1203' y='-0.1636' z='-4.093'/>
+		<halfExtends x='0.1758' y='0.9332' z='1.39'/>
+		<rotation x='0' y='-1e-05' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.8389' y='-0.6269' z='2.342'/>
+		<halfExtends x='0.08788' y='0.7772' z='1.297'/>
+		<rotation x='30' y='90' z='4.33e-06'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.8389' y='-0.6269' z='-2.643'/>
+		<halfExtends x='0.08788' y='0.7772' z='1.297'/>
+		<rotation x='30' y='90' z='4.33e-06'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-3.145' y='0.877' z='-0.05297'/>
+		<halfExtends x='5.812' y='1.683' z='0.2'/>
+		<rotation x='0' y='90' z='-0'/>
+	</box>
+	<box>
+		<position x='-2.023' y='0.877' z='-5.86'/>
+		<halfExtends x='1.188' y='1.683' z='0.2'/>
+		<rotation x='0' y='-1e-05' z='-0'/>
+	</box>
+	<box>
+		<position x='-2.023' y='0.877' z='5.788'/>
+		<halfExtends x='1.188' y='1.683' z='0.2'/>
+		<rotation x='0' y='-1e-05' z='-0'/>
+	</box>
+</rig>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.8577' y='0.1549' z='0.01544'/>
+		<halfExtends x='0.1364' y='1.043' z='0.07576'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='-0.8487' y='0.1549' z='0.01544'/>
+		<halfExtends x='0.1364' y='1.043' z='0.07576'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='0.002797' y='-0.7525' z='0.01544'/>
+		<halfExtends x='0.747' y='0.1341' z='0.07576'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='0.002798' y='0.946' z='0.01544'/>
+		<halfExtends x='0.747' y='0.3065' z='0.07576'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='0.002798' y='0.01589' z='-0.02445'/>
+		<halfExtends x='0.747' y='0.6552' z='0.03788'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>glass</property>
+	</box>
+</rig>

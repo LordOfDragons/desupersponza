@@ -1,0 +1,92 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.CameraDirectors
+pin Dragengine.Gui
+pin Dragengine.Scenery
+pin Dragengine.Preloading
+pin Dragengine.Utils
+
+
+/**
+ * Start game loader class.
+ * 
+ * Loads game world showing a WindowLoading. Once finished finishes setting up game and
+ * hands control over to the game.
+ */
+class StartGame extends WindowGameWorld.Loader
+	/**
+	 * Create start game loader.
+	 */
+	public func new(WindowGameWorld window, String pathWorld) super(window)
+		setPathWorld(pathWorld)
+	end
+	
+	/**
+	 * Loading world finished successfully.
+	 */
+	public func void onLoadWorldFinished()
+		var GameApp app = BaseGameApp.getApp() cast GameApp
+		var GameWorld gameWorld = getStubWorld().getGameWorld()
+		
+		// Spawn player actor
+		var ElementClass eclass = app.getElementClassList().getNamed("PlayerActor")
+		var UniqueID id = app.getIDGenerator().nextID()
+		var PlayerActor player = StubElement.new(eclass, id).createElement() cast PlayerActor
+		
+		// Spawn actor at spawn point in the game world
+		gameWorld.getSpawnPoints().getNamed("player").spawn(gameWorld, player)
+		
+		// To take control of the actor
+		player.getPlayerControllable().takeControl()
+		
+		// Assign camera director attaching the camera to the player controlled actor at eye level
+		var PlayerControlledActorCameraDirector director = PlayerControlledActorCameraDirector.new()
+		
+		director.setViewDistance(50) //300)
+		director.setLowestIntensity(1)
+		director.setHighestIntensity(20)
+		director.setAdaptionTime(5)
+		
+		getWindow().setCameraDirector(director)
+		
+		// Assign game world to game world window. The player can now see and hear the game world
+		super.onLoadWorldFinished()
+		
+		// Switch on processing binding input
+		app.setInputProcessorBindings()
+		
+		// Ready to start your game
+		app.finishLoadGameWorld()
+	end
+	
+	/**
+	 * Loading world failed.
+	 */
+	public func void onLoadWorldFailed()
+		super.onLoadWorldFailed()
+		BaseGameApp.getApp().cancelLoadGameWorld()
+		Engine.quit()
+	end
+end

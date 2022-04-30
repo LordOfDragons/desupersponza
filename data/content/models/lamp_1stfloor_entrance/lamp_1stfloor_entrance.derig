@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0' y='-0.6303' z='0'/>
+		<halfExtends x='0.2023' y='0.3911' z='0.2023'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+</rig>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-0.005633' y='-0.8406' z='-0.03169'/>
+		<halfExtends x='1.364' y='1.378' z='0.05164'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='-0.005633' y='1.167' z='-0.03169'/>
+		<halfExtends x='0.4823' y='0.6622' z='0.05164'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='-0.5746' y='1.405' z='-0.03169'/>
+		<halfExtends x='0.3486' y='0.2667' z='0.05164'/>
+		<rotation x='-1.91e-06' y='5.08e-06' z='-41.3'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='-0.8107' y='0.8018' z='-0.03169'/>
+		<halfExtends x='0.4612' y='0.4114' z='0.05164'/>
+		<rotation x='-4.77e-06' y='7.12e-06' z='-67.6'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='0.5649' y='1.405' z='-0.03169'/>
+		<halfExtends x='0.3486' y='0.2667' z='0.05164'/>
+		<rotation x='-1.91e-06' y='180' z='-41.3'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='0.801' y='0.8018' z='-0.03169'/>
+		<halfExtends x='0.4612' y='0.4114' z='0.05164'/>
+		<rotation x='-4.77e-06' y='-180' z='-67.6'/>
+		<property>wood_tile_01</property>
+	</box>
+</rig>

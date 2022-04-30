@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-0.06383' y='0' z='0.7151'/>
+		<halfExtends x='0.1109' y='1' z='0.07958'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='-0.06383' y='0' z='-0.7406'/>
+		<halfExtends x='0.1109' y='1' z='0.07958'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='-0.06383' y='-0.9236' z='-0.0116'/>
+		<halfExtends x='0.1109' y='0.0865' z='0.6582'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='-0.06383' y='0.9505' z='-0.0116'/>
+		<halfExtends x='0.1109' y='0.162' z='0.6582'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='-0.06383' y='-0.0257' z='-0.0116'/>
+		<halfExtends x='0.1109' y='0.8289' z='0.6582'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+</rig>

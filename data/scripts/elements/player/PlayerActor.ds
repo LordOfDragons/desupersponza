@@ -1,0 +1,60 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Scenery
+pin Dragengine.Utils
+
+/**
+ * Player actor element.
+ */
+public class PlayerActor extends BaseActor
+	public var ECBehaviorLookAt.Instance lookAt
+	
+	
+	/**
+	 * Create element and store behaviors. Using instance() call is fast.
+	 */
+	public func new(PlayerActorClass eclass) super(eclass)
+		lookAt = eclass.lookAt.instance(this)
+		
+		// Init foot steps behavior. We use one for walking and one for running. For example purpose
+		// the volumes are exagerated to make running heard better by the NPC than walking.
+		var WeightedRandomList footStepSounds = WeightedRandomList.new()
+		eclass.footStepSounds.forEach(block Sound each
+			footStepSounds.add(each, 1)
+		end )
+		
+		var ECBehaviorFootSteps.Configuration footStepsConfig
+		
+		footStepsConfig = ECBehaviorFootSteps.Configuration.new(PlayerActorClass.footstepsWalk)
+		footStepsConfig.setInterval(0.6)
+		footStepsConfig.addEvent(ECBehaviorFootSteps.Event.new(0.5, footStepSounds, 0.1, 20))
+		getFootSteps().addConfiguration(footStepsConfig)
+		
+		footStepsConfig = ECBehaviorFootSteps.Configuration.new(PlayerActorClass.footstepsRun)
+		footStepsConfig.setInterval(0.4)
+		footStepsConfig.addEvent(ECBehaviorFootSteps.Event.new(0.3, footStepSounds, 0.3, 40))
+		getFootSteps().addConfiguration(footStepsConfig)
+	end
+end

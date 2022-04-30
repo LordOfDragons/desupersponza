@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<elementClass name="ornament_stones_2ndfloor" class="SimpleElement">
+	<string name="component.model">ornament_stones_2ndfloor.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.audioModel">ornament_stones_2ndfloor.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

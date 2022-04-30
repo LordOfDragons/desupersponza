@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<elementClass name="roof_floor_03_09" class="SimpleElement">
+	<string name="component.model">roof_floor_03_09.demodel</string>
+	<string name="component.rig">roof_floor_03_09.derig</string>
+	<string name="component.audioModel">roof_floor_03_09.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="stone_01_tile">
+			<string key="skin">/content/materials/stone_01_tile/material.deskin</string>
+		</map>
+		<map key="roof_tiles_01">
+			<string key="skin">/content/materials/roof_tiles_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

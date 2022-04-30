@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-0.009917' y='-0.01325' z='-1.459'/>
+		<halfExtends x='1.09' y='0.06689' z='1.498'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>stone_01_tile</property>
+	</box>
+	<box>
+		<position x='-0.009917' y='3.809' z='-1.459'/>
+		<halfExtends x='1.09' y='0.06689' z='1.498'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.009918' y='1.916' z='-2.768'/>
+		<halfExtends x='1.079' y='1.912' z='0.06602'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='1.068' y='1.908' z='-1.441'/>
+		<halfExtends x='1.498' y='1.912' z='0.06602'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-1.097' y='1.908' z='-1.441'/>
+		<halfExtends x='1.498' y='1.912' z='0.06602'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.9246' y='1.916' z='-0.01467'/>
+		<halfExtends x='0.1211' y='1.912' z='0.07723'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.8943' y='1.916' z='-0.01467'/>
+		<halfExtends x='0.1391' y='1.912' z='0.07723'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.01392' y='3.549' z='-0.007701'/>
+		<halfExtends x='0.8168' y='0.2231' z='0.07748'/>
+		<rotation x='0' y='180' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.6594' y='3.101' z='-0.007703'/>
+		<halfExtends x='0.489' y='0.2231' z='0.07748'/>
+		<rotation x='-2.99e-06' y='-180' z='-52.3'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.6792' y='3.101' z='-0.007703'/>
+		<halfExtends x='0.489' y='0.2231' z='0.07748'/>
+		<rotation x='-2.99e-06' y='6.16e-06' z='-52.3'/>
+		<property>brickwall_02</property>
+	</box>
+</rig>

@@ -1,0 +1,168 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Gui
+pin Dragengine.Scenery
+pin Dragengine.LoadSave
+
+
+/**
+ * Player hand action for VR use.
+ */
+class PlayerHandAction extends BaseVRHandAction implements BAAVRTriggerInput, BAAVRMenuInput
+	/**
+	 * Factory for loading actor actions. For this Example VR application we do not need
+	 * persistency support hence readObjectFromFile() is doing the same as createAction().
+	 */
+	public class Factory implements PersistencyFactory, ECBehaviorVRHandAction.ActionFactory
+		public static fixed var String name = "PlayerHandAction"
+		
+		public func new()
+		end
+		
+		public func Persistable readObjectFromFile(PersistencyEnvironment env, FileReader reader)
+			return PlayerHandAction.new()
+		end
+		
+		public static func void registerFactory(Persistency persistency)
+			persistency.addFactory(name, Factory.new())
+		end
+		
+		public func BaseVRHandAction createAction(ECBehaviorVRHandAction.Instance instance)
+			return PlayerHandAction.new()
+		end
+	end
+	
+	
+	protected var ECBehaviorVRControlDesktop.Instance controlDesktop
+	
+	
+	/** Create action. */
+	public func new()
+	end
+	
+	
+	/** Init behaviors. */
+	protected func void initBehaviors()
+		super.initBehaviors()
+		
+		if isRightHand()
+			controlDesktop = (actor cast VRPlayerActor).rightHandControlDesktop
+			
+		else
+			controlDesktop = (actor cast VRPlayerActor).leftHandControlDesktop
+		end
+	end
+	
+	
+	
+	/** Action has been activated. */
+	public func void activate(BehaviorElement actor, ECBehaviorVRHand.Instance vrHand)
+		super.activate(actor, vrHand)
+		
+// 		handGrabber.setEnabled(true)
+		
+		// Enable point-at
+		handPointAt.setEnabled(true)
+		handLaserPointer.setColor(Color.new(0, 1, 1))
+		handLaserPointer.setIntensity(0)
+	end
+	
+	/** Action is about to be deactivated. */
+	public func void deactivate()
+		controlDesktop.pointAtRelease()
+		handGrabber.setEnabled(false)
+		handPointAt.setEnabled(false)
+		
+		super.deactivate()
+	end
+	
+	/** Set up animator. */
+	protected func void initAnimator()
+		// Select animator to use. Use empty string to clear the animator. We do not want
+		// to use an animator to not replace the hand pose if the player has empty hands
+		handAnimated.setActiveAnimatorID("")
+	end
+	
+	
+	
+	/**
+	 * Frame update.
+	 */
+	public func void think(float elapsed)
+		if controlDesktop.pointAt()
+			handLaserPointer.setIntensity(0.25)
+			
+		else
+			handLaserPointer.setIntensity(0)
+		end
+		
+		super.think(elapsed)
+	end
+	
+	
+	/** \brief Menu is touched. */
+	public func void menuTouch()
+	end
+	
+	/** \brief Menu has been untouched. */
+	public func void menuUntouch()
+	end
+	
+	/** \brief Menu is pressed. */
+	public func void menuPress()
+		(actor cast VRPlayerActor).vrmenu.toggleVisible(vrHand)
+	end
+	
+	/** \brief Menu has been released. */
+	public func void menuRelease()
+	end
+	
+	
+	/** \brief Trigger is touched. */
+	public func void triggerTouch()
+	end
+	
+	/** \brief Trigger has been untouched. */
+	public func void triggerUntouch()
+	end
+	
+	/** \brief Trigger is pulled. */
+	public func void triggerPull()
+		if controlDesktop.pointAtPull()
+			return
+		end
+	end
+	
+	/** \brief Trigger has been released. */
+	public func void triggerRelease()
+		if controlDesktop.pointAtRelease()
+			return
+		end
+	end
+	
+	/** \brief Analog trigger value changed in the range from 0 to 1. */
+	public func void triggerAnalog(float value)
+	end
+end

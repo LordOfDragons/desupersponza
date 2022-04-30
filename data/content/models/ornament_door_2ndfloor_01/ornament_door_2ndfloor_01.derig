@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0' y='-0.1053' z='-0.04691'/>
+		<halfExtends x='1.09' y='0.06689' z='1.498'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>stone_01_tile</property>
+	</box>
+	<box>
+		<position x='0' y='3.717' z='-0.04691'/>
+		<halfExtends x='1.09' y='0.06689' z='1.498'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0' y='1.824' z='-1.497'/>
+		<halfExtends x='1.079' y='1.912' z='0.06602'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-1.078' y='1.816' z='-0.06469'/>
+		<halfExtends x='1.498' y='1.912' z='0.06602'/>
+		<rotation x='0' y='-90' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='1.087' y='1.816' z='-0.06469'/>
+		<halfExtends x='1.498' y='1.912' z='0.06602'/>
+		<rotation x='0' y='-90' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.8736' y='1.824' z='1.324'/>
+		<halfExtends x='0.2292' y='1.912' z='0.1256'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.8599' y='1.824' z='1.324'/>
+		<halfExtends x='0.2292' y='1.912' z='0.1256'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.004005' y='2.196' z='1.324'/>
+		<halfExtends x='0.7457' y='0.1321' z='0.1256'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='0.004005' y='3.626' z='1.324'/>
+		<halfExtends x='0.7457' y='0.1321' z='0.1256'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>brickwall_02</property>
+	</box>
+	<box>
+		<position x='-0.007437' y='1.006' z='1.25'/>
+		<halfExtends x='0.6509' y='1.109' z='0.05024'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='-0.007437' y='2.917' z='1.259'/>
+		<halfExtends x='0.6824' y='0.5983' z='0.06281'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>glass</property>
+	</box>
+</rig>

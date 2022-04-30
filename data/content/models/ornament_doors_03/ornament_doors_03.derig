@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.8501' y='-0.4743' z='0.01143'/>
+		<halfExtends x='0.1616' y='1.4' z='0.2043'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.8598' y='-0.4743' z='0.01143'/>
+		<halfExtends x='0.1616' y='1.4' z='0.2043'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.01599' y='0.5802' z='0.01081'/>
+		<halfExtends x='0.7475' y='0.1659' z='0.2058'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.008094' y='-0.7244' z='0.01'/>
+		<halfExtends x='0.6999' y='1.147' z='0.08484'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+	<box>
+		<position x='0.7081' y='1.149' z='0.01143'/>
+		<halfExtends x='0.1616' y='0.3453' z='0.2043'/>
+		<rotation x='-9.44e-07' y='3.69e-06' z='-28.7'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='0.2661' y='1.562' z='0.01143'/>
+		<halfExtends x='0.1616' y='0.3932' z='0.2043'/>
+		<rotation x='-4.17e-06' y='6.84e-06' z='-62.7'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.7169' y='1.149' z='0.01143'/>
+		<halfExtends x='0.1616' y='0.3453' z='0.2043'/>
+		<rotation x='-9.44e-07' y='180' z='-28.7'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.275' y='1.562' z='0.01143'/>
+		<halfExtends x='0.1616' y='0.3932' z='0.2043'/>
+		<rotation x='-4.17e-06' y='-180' z='-62.7'/>
+		<property>door_stoneframe_01</property>
+	</box>
+	<box>
+		<position x='-0.008094' y='1.127' z='-0.02671'/>
+		<halfExtends x='0.6999' y='0.3979' z='0.06066'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>metal_door_01</property>
+	</box>
+</rig>

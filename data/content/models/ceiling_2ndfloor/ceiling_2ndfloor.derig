@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-0.01983' y='0.9097' z='4.751'/>
+		<halfExtends x='11.25' y='0.04303' z='1.351'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>ceiling_plaster_01</property>
+	</box>
+	<box>
+		<position x='-0.01983' y='0.9097' z='-4.683'/>
+		<halfExtends x='11.25' y='0.04303' z='1.448'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>ceiling_plaster_01</property>
+	</box>
+	<box>
+		<position x='9.886' y='0.9097' z='-0.01159'/>
+		<halfExtends x='6.144' y='0.04303' z='1.38'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>ceiling_plaster_01</property>
+	</box>
+	<box>
+		<position x='-9.873' y='0.9097' z='-0.01159'/>
+		<halfExtends x='6.12' y='0.04303' z='1.424'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>ceiling_plaster_01</property>
+	</box>
+</rig>

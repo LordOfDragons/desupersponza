@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<elementClass name="column_2ndfloor_09" class="SimpleElement">
+	<string name="component.model">column_2ndfloor_09.demodel</string>
+	<string name="component.rig">column_2ndfloor_09.derig</string>
+	<string name="component.audioModel">column_2ndfloor_09.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="stone_01_tile">
+			<string key="skin">/content/materials/stone_01_tile/material.deskin</string>
+		</map>
+		<map key="column_head_2ndfloor_02">
+			<string key="skin">/content/materials/column_head_2ndfloor_02/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

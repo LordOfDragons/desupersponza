@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<skin>
+	<texture name='light_bulb'>
+		<color property='color' r='1' g='1' b='1'/>
+		<value property='reflectivity'>0.23</value>
+		<value property='roughness'>0</value>
+		<value property='shadow.none'>1</value>
+		<color property='emissivity' r='1' g='1' b='1' renderable='light.color'/>
+		<value property='emissivity.intensity' renderable='light.intensity'>0</value>
+	</texture>
+</skin>

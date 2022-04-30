@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.8388' y='-0.09825' z='0.01889'/>
+		<halfExtends x='0.1582' y='1.803' z='0.09565'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='-0.8346' y='-0.09825' z='0.01889'/>
+		<halfExtends x='0.1582' y='1.803' z='0.09565'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='-0.008768' y='1.45' z='0.01878'/>
+		<halfExtends x='0.7315' y='0.3105' z='0.09438'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>window_frame_01</property>
+	</box>
+	<box>
+		<position x='-0.007984' y='-0.9529' z='-0.02254'/>
+		<halfExtends x='0.6974' y='0.9508' z='0.05643'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>stone_01_tile</property>
+	</box>
+	<box>
+		<position x='-0.007984' y='0.569' z='-0.05254'/>
+		<halfExtends x='0.6974' y='0.5785' z='0.01385'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>glass</property>
+	</box>
+</rig>

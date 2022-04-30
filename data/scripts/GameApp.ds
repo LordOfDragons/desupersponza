@@ -1,0 +1,204 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Commands
+pin Dragengine.Gui.Layouts
+pin Dragengine.Gui.Events
+pin Dragengine.Scenery
+pin Dragengine.Utils
+
+/**
+ * Game Application Class.
+ */
+class GameApp extends BaseGameApp
+	private var WindowMenu pWindowMenu
+	private var Array pListeners
+	private var GameModels pGameModels
+	
+	
+	/**
+	 * Create Game Application.
+	 */
+	public func new()
+		pathDesktopGuiTheme = "/content/ui/main.guitheme.xml"
+	end
+	
+	/**
+	 * Get game application instance.
+	 */
+	public static func GameApp get()
+		return getApp() cast GameApp
+	end
+	
+	/**
+	 * Game models.
+	 */
+	public func GameModels getGameModels()
+		return pGameModels
+	end
+	
+	/**
+	 * Menu window.
+	 */
+	public func WindowMenu getWindowMenu()
+		return pWindowMenu
+	end
+	
+	/**
+	 * Add game listener.
+	 */
+	public func void addListener(GameListener listener)
+		pListeners.add(listener)
+	end
+	
+	/**
+	 * Remove game listener. 
+	 */
+	public func void removeListener(GameListener listener)
+		pListeners.remove(listener)
+	end
+	
+	/**
+	 * Notify activate VR.
+	 */
+	public func void notifyActivateVR(bool activate)
+		pListeners.forEach(block GameListener each
+			each.activateVR(activate)
+		end)
+	end
+	
+	
+	
+	/**
+	 * Initialize game.
+	 */
+	public func void initGame()
+		pListeners = Array.new()
+		
+		super.initGame()
+		
+		pGameModels = GameModels.new()
+		
+		// add an FPS display panel to the top right
+		getPanelHud().getTopRight().addWidget(PanelSSFpsRate.new("@ui.fpsrates.show"))
+		
+		// add menu window but keep it hidden
+		pWindowMenu = WindowMenu.new(getDesktop(), null)
+		
+		// Start game by showing the Drag[en]gine Game Engine logo then launch app
+		WindowLogo.showDragengineLogo(getDesktop(), BlockActionListener.new(block ActionEvent event
+			launchApplication()
+		end))
+	end
+	
+	/**
+	 * Launch example application.
+	 */
+	public func void launchApplication()
+		// BaseGameApp adds a WindowConsole which can be toggled by pressing F1 key. Adding
+		// a ShoutConsole shows the last messages without needing to show the console.
+		getWindowGameWorld().addWidget(ShoutConsole.new(getConsole()))
+		
+		// startLoadGameWorld is a simple way to start loading a game world into the
+		// WindowGameWorld created by BaseGameApp. StartGame is a script class created
+		// alongside this application class. It will be notified when the world loading
+		// finishes and contains the required code to finish starting the game.
+		startLoadGameWorld(StartGame.new(getWindowGameWorld(), "/content/worlds/sponza.deworld"))
+	end
+	
+	/**
+	 * Create element classes and add them to element class list.
+	 */
+	protected func void createAndAddElementClasses()
+		super.createAndAddElementClasses()
+		
+		// Add scripted element classes. These can be used by XML element classes below
+		var ElementClassList eclist = getElementClassList()
+		eclist.add(PlayerActorClass.new())
+		eclist.add(SSElementClass.new())
+		eclist.add(SSLampClass.new())
+		eclist.add(VRPlayerActorClass.new())
+		eclist.add(VRMenuClass.new())
+		
+		// Add XML element classes by recursively scanning directory for *.deeclass files.
+		// These require scripted element classes as parent classes. Using *.deeclass
+		// files you can easily add content with needing to write scripted classes.
+		getLoaders().getElementClass().addXmlElementClasses(eclist, "/content/models", true)
+	end
+	
+	/**
+	 * Create and add custom commands.
+	 */
+	protected func void createAndAddCommands()
+		super.createAndAddCommands()
+		
+		var CommandManager cmgr = getCommandManager()
+		cmgr.add(CommandMenu.new())
+		
+		// Add support for per-hand trigger and menu commands
+		CommandsBAAVRTriggerInput.addCommands(cmgr, getPlayerControlledActor())
+		CommandsBAAVRMenuInput.addCommands(cmgr, getPlayerControlledActor())
+	end
+	
+	/**
+	 * Set default bindings. These are used the first time the player runs the game.
+	 */
+	public func DefaultBindingHelper defaultBindings()
+		var DefaultBindingHelper helper = super.defaultBindings()
+		
+		helper.keyboardBindKeyCode(InputEventKey.escape, "showMenu")
+		
+		// Add default bindings for per-hand trigger and menu commands
+		CommandsBAAVRTriggerInput.addDefaultBindings(helper)
+		CommandsBAAVRMenuInput.addDefaultBindings(helper)
+		
+		return helper
+	end
+	
+	/**
+	 * Cleaning up.
+	 */
+	public func void cleanUp()
+		pWindowMenu = null
+		pListeners.removeAll()
+		pGameModels = null
+		
+		super.cleanUp()
+	end
+	
+	/**
+	 * Finished loading game world.
+	 */
+	public func void finishLoadGameWorld()
+		super.finishLoadGameWorld()
+		
+		var GameWorld gameWorld = getWindowGameWorld().getGameWorld()
+		
+		pGameModels.onGameWorldChanged(gameWorld)
+		
+		pListeners.forEach(block GameListener each
+			each.gameWorldChanged(gameWorld)
+		end)
+	end
+end

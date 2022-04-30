@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<elementClass name="sponza_ornament" class="SimpleElement">
+	<string name="component.model">sponza_ornament.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.audioModel">sponza_ornament.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="ornament_01">
+			<string key="skin">/content/materials/ornament_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

@@ -1,0 +1,367 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.CameraDirectors
+pin Dragengine.Gui.Layouts
+pin Dragengine.Gui.Events
+pin Dragengine.Scenery
+pin Dragengine.Utils
+pin Dragengine.Preloading
+pin Dragengine.TriggerSystem
+
+
+/**
+ * Game menu shown to the player if the CommandMenu command is invoked.
+ */
+class WindowMenu extends Window
+	/**
+	 * Action listener closing the menu and returning to the game.
+	 */
+	class ActionResume implements ActionListener
+		var WindowMenu window
+		
+		public func new(WindowMenu window)
+			this.window = window
+		end
+		
+		public func void onAction(ActionEvent event)
+			window.hideMenu()
+		end
+		
+		public func void resumeLater()
+			TimerBlock.new(0, false, block
+				onAction(null)
+			end)
+		end
+	end
+	
+	/**
+	 * Action listener showing settings dialog. This allows to change bindings
+	 * and module parameters
+	 */
+	class ActionSettings implements ActionListener
+		/** WSSEditBindings extended with out commands. */
+		class SheetEditBindings extends WSSEditBindings
+			public func new()
+			end
+			
+			protected func void addCommands(EditBindingsPanel editBindings)
+				super.addCommands(editBindings)
+				
+				var Array list = Array.new()
+				modelAddButton(list, "showMenu")
+				
+				editBindings.getModel().addAll(list)
+			end
+		end
+		
+		var WindowMenu window
+		
+		public func new(WindowMenu window)
+			this.window = window
+		end
+		
+		public func void onAction(ActionEvent event)
+			var Point size = Point.new(800, 600)
+			var WindowSettings windowSettings = WindowSettings.new(size)
+			
+			windowSettings.addSheet(SheetEditBindings.new())
+			windowSettings.addSheet(WSSModuleParameters.new())
+			
+			windowSettings.show(window, false, WindowModal.Placement.desktop)
+		end
+	end
+	
+	/**
+	 * Action listener exiting the example app. What CommandQuitGame would do.
+	 */
+	class ActionQuit implements ActionListener
+		public func new()
+		end
+		
+		public func void onAction(ActionEvent event)
+			BaseGameApp.getApp().quitGame()
+		end
+	end
+	
+	/**
+	 * Teleport player list entry. Just so we can name it properly.
+	 */
+	class TeleportPlayerListItem
+		public var String name
+		public var String spawnPoint
+		
+		public func new(String name, String spawnPoint)
+			this.name = name
+			this.spawnPoint = spawnPoint
+		end
+		
+		public func String toString()
+			return name
+		end
+	end
+	
+	/**
+	 * Action teleporting player on selected spawn point.
+	 */
+	class ActionTeleportPlayer extends ActionResume
+		private var DefaultListModel model
+		
+		public func new(WindowMenu window, DefaultListModel model) super(window)
+			this.model = model
+		end
+		
+		public func void onAction(ActionEvent event)
+			var ECBehaviorPlayerControllable.Instance controllable = GameApp.getApp().getPlayerControlledActor().getActor()
+			var TeleportPlayerListItem selected = model.getSelectedElement() cast TeleportPlayerListItem
+			
+			ECBTeleportPlayer.getInstanceIn(controllable.getElement()).teleport(selected.spawnPoint)
+			
+			super.onAction(event)
+		end
+	end
+	
+	/**
+	 * Toggle model listener (de-)activate VR.
+	 */
+	class ToggleActivateVR extends DefaultToggleModelListener
+		var WindowMenu window
+		
+		public func new(WindowMenu window)
+			this.window = window
+		end
+		
+		public func void toggledChanged(ToggleModel model)
+			var Element player = GameApp.get().getPlayerControlledActor().getActor().getElement()
+			var GameWorld gameWorld = player.getGameWorld()
+			var StubElement stub = StubElement.new(player.getStub())
+			stub.setPosition(player.getPosition())
+			stub.setRotation(player.getOrientation().getEulerAngles())
+			
+			if model.getToggled()
+				try
+					VRSystem.startRuntime()
+				catch Exception e
+					WindowDialog.message(window, "Activate VR Failed", e.toString(), null, null, null)
+					model.setToggled(false)
+					return
+				end
+				
+				stub.setClass(GameApp.get().getElementClassList().getNamed("VRPlayerActor"))
+				
+			else
+				VRSystem.stopRuntime()
+				
+				stub.setClass(GameApp.get().getElementClassList().getNamed("PlayerActor"))
+			end
+			
+			if player.getClass() != stub.getClass()
+				player.safeDispose()
+				player = stub.createElement()
+				gameWorld.addElement(player)
+				ECBehaviorPlayerControllable.getInstanceIn(player cast BehaviorElement).takeControl()
+				
+				var PlayerControlledActorCameraDirector director
+				if model.getToggled()
+					director = VRPlayerControlledActorCameraDirector.new()
+				else
+					director = PlayerControlledActorCameraDirector.new()
+				end
+				
+				director.setViewDistance(50) //300)
+				director.setLowestIntensity(1)
+				director.setHighestIntensity(20)
+				director.setAdaptionTime(5)
+				
+				GameApp.get().getWindowGameWorld().setCameraDirector(director)
+			end
+			
+			GameApp.get().notifyActivateVR(model.getToggled())
+			
+			if model.getToggled()
+				window.hideMenu()
+			end
+		end
+	end
+	
+	
+	
+	private var GameWorld pGameWorld
+	private var ECBehaviorRenderableDesktop.Instance pVRMenu
+	
+	
+	
+	/**
+	 * Create window and show it on the desktop.
+	 */
+	public func new(Desktop desktop, ECBehaviorRenderableDesktop.Instance vrmenu) super(0, 0, 300, 400)
+		pVRMenu = vrmenu
+		
+		runWhileBlockingLayout(block
+			setCanMaximize(false)
+			setCanMinimize(false)
+			setCanReorder(false)
+			setCanClose(false)
+			setVisible(vrmenu != null)
+			setTitle("Super Sponza")
+			
+			// By assigning a designer selector you can style the window using
+			// "/content/ui/main.guitheme files". Without setting a custom designer
+			// name the default window designer will be used.
+			// 
+			// By using a "." in the selector name you can support fallback designers
+			// to be used. In this example first the designer named "Window.Menu" is
+			// looked up. If not found "Window" is tried. If this one is also not
+			// found no designer is used.
+			setDesignerSelector(vrmenu != null if "WindowMenuVR" else "WindowMenu")
+			
+			// Create content
+			setLayout(BoxLayout.new(LayoutAxis.x))
+			addWidget(ScrollPanel.new(Viewport.new(Panel.new(FlowLayout.new(LayoutAxis.y, 5), block Panel content
+				if vrmenu == null
+					content.addWidget(Panel.new(GridLayout.new(3, 1), block Panel p
+						p.addWidget(Button.new("Resume", ActionResume.new(this)))
+						p.addWidget(Button.new("Settings", ActionSettings.new(this)))
+						p.addWidget(Button.new("Quit", ActionQuit.new()))
+					end))
+				end
+				
+				content.addWidget(CollapsibleGroup.new("Player", true, FormLayout.new(true, 10, 1), block Panel p
+					// Teleport player
+					var DefaultListModel modelList = DefaultListModel.new()
+					modelList.add(TeleportPlayerListItem.new("Ground Entrance", "player"))
+					modelList.add(TeleportPlayerListItem.new("Ground Lion Statue", "lionstatue"))
+					modelList.add(TeleportPlayerListItem.new("1st Floor", "1stfloor"))
+					modelList.add(TeleportPlayerListItem.new("2nd Floor", "2ndfloor"))
+					modelList.add(TeleportPlayerListItem.new("Rooftop", "rooftop"))
+					p.addWidget(Button.new("Teleport Player", ActionTeleportPlayer.new(this, modelList)))
+					p.addWidget(ComboBox.new(modelList))
+					
+					// show ui fps rates
+					if vrmenu == null
+						p.addWidget(Label.new(""))
+						p.addWidget(CheckBox.new(GameModels.get().modelShowFPSRates, "Show FPS Rates"))
+					end
+				end))
+				
+				content.addWidget(CollapsibleGroup.new("Sky", true, FormLayout.new(true, 10, 1), block Panel p
+					p.addWidget(Label.new("Sky Day Time:"))
+					p.addWidget(ScrollBar.new(Orientation.horizontal, GameModels.get().modelDayTimeSky))
+				end))
+				
+				content.addWidget(CollapsibleGroup.new("Curtains", true, FormLayout.new(true, 10, 1), block Panel p
+					p.addWidget(Label.new(""))
+					p.addWidget(CheckBox.new(GameModels.get().modelShowCurtains, "Show Curtains"))
+				end))
+				
+				content.addWidget(CollapsibleGroup.new("Lights", true, GridLayout.new(2, 0), block Panel p
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF0RightWing, "F0 Right Wing"))
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF0LeftWing, "F0 Left Wing"))
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF0Entrance, "F0 Entrance"))
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF0LionHead, "F0 Lionhead"))
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF1RightWing, "F1 Right Wing"))
+					p.addWidget(CheckBox.new(GameModels.get().modelLampF1LeftWing, "F1 Left Wing"))
+				end))
+				
+				if vrmenu == null
+					content.addWidget(CollapsibleGroup.new("Virtual Reality", false, FlowLayout.new(LayoutAxis.y), block Panel p
+						var Label labelInfo = Label.new("If VR is slow goto 'Settings' -> 'Module Parameters' and set 'VR Render Scale' to 75(50) and disable SSAO")
+						labelInfo.setWordWrap(true)
+						p.addWidget(labelInfo)
+						
+						var DefaultToggleModel modelToggle = DefaultToggleModel.new(false)
+						p.addWidget(CheckBox.new(modelToggle, "Activate VR"))
+						modelToggle.addListener(ToggleActivateVR.new(this))
+					end))
+				end
+			end), 0, 20, true), ScrollPanel.Policy.hidden, ScrollPanel.Policy.needed))
+		end)
+		
+		// Add the window to the desktop
+		desktop.addWindow(this)
+		
+		if vrmenu != null
+			setSize(desktop.getContainerSize())
+			
+		else
+			centerWindow()
+			setX(desktop.getContainerWidth() - getWidth() - 50)
+		end
+	end
+	
+	/**
+	 * Dispose of widget.
+	 */
+	public func void dispose()
+		pGameWorld = null
+		pVRMenu = null
+		super.dispose()
+	end
+	
+	/**
+	 * Show menu and make sure it is well inside screen boundaries.
+	 */
+	public func void showMenu()
+		if pVRMenu != null
+			return
+		end
+		
+		var Desktop desktop = getDesktop()
+		
+		var RectArea boundary = RectArea.new(Point.new(), desktop.getContainerSize() - Point.new(1, 1))
+		boundary = boundary.grow(-getSize())
+		setPosition(boundary.clamp(getPosition()))
+		
+		setVisible(true)
+		moveToTop()
+		grabFocus()
+		
+		// Disable the game window so the player can not click on it and mouse pointer is visible
+		GameApp.getApp().getWindowGameWorld().setEnabled(false)
+		
+		GameApp.getApp().setInputProcessorDesktop()
+		
+		desktop.warpCenterMouseIn(this)
+	end
+	
+	/**
+	 * Hide menu and give control back to player.
+	 */
+	public func void hideMenu()
+		if pVRMenu != null
+			// delay this since otherwise we remove the widget while iterating listeners
+			TimerBlock.new(0, false, block
+				(GameApp.get().getPlayerControlledActor().getActor().getElement() cast VRPlayerActor).vrmenu.hideMenu()
+			end)
+			return
+		end
+		
+		// Enable the game window again. This allows the game window to receive
+		// the focus once the main window vanishes
+		BaseGameApp.getApp().getWindowGameWorld().setEnabled(true)
+		
+		setVisible(false)
+		BaseGameApp.getApp().setInputProcessorBindings()
+	end
+end

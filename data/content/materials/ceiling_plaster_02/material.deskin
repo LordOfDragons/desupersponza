@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<skin>
+	<texture name='material'>
+		<image property='nonpbr.albedo'>nonpbr_albedo.webp</image>
+		<value property='nonpbr.metalness'>0</value>
+		<image property='roughness'>roughness.jpg</image>
+		<value property='sound.absorption'>0.02</value>
+		<value property='sound.absorption.lower'>0.5</value>
+		<value property='sound.absorption.upper'>1.25</value>
+	</texture>
+</skin>

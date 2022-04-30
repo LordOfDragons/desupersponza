@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<elementClass name="arch_stones_01" class="SimpleElement">
+	<string name="component.model">arch_stones_01.demodel</string>
+	<string name="component.rig">arch_stones_01.derig</string>
+	<string name="component.audioModel">arch_stones_01.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="arch_stone_wall_01">
+			<string key="skin">/content/materials/arch_stone_wall_01/material.deskin</string>
+		</map>
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

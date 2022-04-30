@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.003326' y='-0.3766' z='-0.8264'/>
+		<halfExtends x='0.0526' y='2.098' z='0.3801'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='0.003326' y='-0.3766' z='1.126'/>
+		<halfExtends x='0.0526' y='2.098' z='0.1688'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+	<box>
+		<position x='0.003326' y='1.047' z='0.2616'/>
+		<halfExtends x='0.0526' y='0.7604' z='0.7155'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_tile_01</property>
+	</box>
+</rig>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<elementClass name="columns_1stfloor_01a" class="SimpleElement">
+	<string name="component.model">columns_1stfloor_01a.demodel</string>
+	<string name="component.rig">columns_1stfloor_01a.derig</string>
+	<string name="component.audioModel">columns_1stfloor_01a.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="column_1stfloor">
+			<string key="skin">/content/materials/column_1stfloor/material.deskin</string>
+		</map>
+		<map key="column_head_1stfloor">
+			<string key="skin">/content/materials/column_head_1stfloor/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

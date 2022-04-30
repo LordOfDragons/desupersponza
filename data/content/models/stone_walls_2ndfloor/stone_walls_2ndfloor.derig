@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.007998' y='-2.555' z='4.693'/>
+		<halfExtends x='8.37' y='0.1' z='1.681'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='0.007998' y='-2.555' z='-4.717'/>
+		<halfExtends x='8.37' y='0.1' z='1.681'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='9.87' y='-2.555' z='0.01027'/>
+		<halfExtends x='6.425' y='0.1' z='1.541'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-9.87' y='-2.555' z='0.01027'/>
+		<halfExtends x='6.425' y='0.1' z='1.541'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='0.01717' y='-2.125' z='2.952'/>
+		<halfExtends x='8.668' y='0.3568' z='0.3668'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='0.01717' y='-2.125' z='-3.183'/>
+		<halfExtends x='8.668' y='0.3568' z='0.3668'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='8.315' y='-2.125' z='-0.1246'/>
+		<halfExtends x='3.431' y='0.3568' z='0.3668'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-8.283' y='-2.125' z='-0.1246'/>
+		<halfExtends x='3.431' y='0.3568' z='0.3668'/>
+		<rotation x='0' y='90' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='10.92' y='0.07157' z='5.977'/>
+		<halfExtends x='0.2614' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='7.889' y='-0.6081' z='5.977'/>
+		<halfExtends x='1.069' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='3.858' y='1.945' z='5.977'/>
+		<halfExtends x='6.844' y='0.05' z='0.7012'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='3.991' y='-0.6081' z='5.977'/>
+		<halfExtends x='1.124' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-0.04817' y='-0.6081' z='5.977'/>
+		<halfExtends x='1.255' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-6.035' y='0.07157' z='5.977'/>
+		<halfExtends x='3.117' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-9.908' y='1.254' z='5.977'/>
+		<halfExtends x='0.7708' y='0.05' z='1.389'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-10.94' y='0.07157' z='5.977'/>
+		<halfExtends x='0.2688' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='10.92' y='0.07157' z='-6.249'/>
+		<halfExtends x='0.2614' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='7.889' y='-0.6081' z='-6.249'/>
+		<halfExtends x='1.069' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='3.858' y='1.945' z='-6.249'/>
+		<halfExtends x='6.844' y='0.05' z='0.7012'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='3.991' y='-0.6081' z='-6.249'/>
+		<halfExtends x='1.124' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-0.04817' y='-0.6081' z='-6.249'/>
+		<halfExtends x='1.255' y='0.05' z='1.875'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-7.996' y='0.07157' z='-6.249'/>
+		<halfExtends x='1.152' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-6.044' y='1.254' z='-6.249'/>
+		<halfExtends x='0.8087' y='0.05' z='1.389'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-10.94' y='0.07157' z='-6.249'/>
+		<halfExtends x='0.2688' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-4.089' y='0.07157' z='-6.249'/>
+		<halfExtends x='1.152' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-9.908' y='1.952' z='-6.249'/>
+		<halfExtends x='0.774' y='0.05' z='0.6946'/>
+		<rotation x='-90' y='0' z='-1.27e-14'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='0.07157' z='-5.993'/>
+		<halfExtends x='0.2688' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='0.07157' z='5.708'/>
+		<halfExtends x='0.2688' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='0.07157' z='2.36'/>
+		<halfExtends x='1.369' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='0.07157' z='-2.473'/>
+		<halfExtends x='1.511' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='1.945' z='-4.853'/>
+		<halfExtends x='0.888' y='0.05' z='0.7007'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='1.945' z='4.583'/>
+		<halfExtends x='0.888' y='0.05' z='0.7007'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='1.899' z='0.01831'/>
+		<halfExtends x='1.002' y='0.05' z='0.7477'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='1.009' z='0.8281'/>
+		<halfExtends x='0.6049' y='0.05' z='0.3303'/>
+		<rotation x='-45' y='180' z='90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='11.22' y='1.009' z='-0.7704'/>
+		<halfExtends x='0.6049' y='0.05' z='0.3303'/>
+		<rotation x='-45' y='3.16e-06' z='90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-11.26' y='0.07157' z='-1.261'/>
+		<halfExtends x='4.991' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-11.26' y='0.07157' z='5.706'/>
+		<halfExtends x='0.2657' y='0.05' z='2.579'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+	<box>
+		<position x='-11.26' y='1.25' z='4.589'/>
+		<halfExtends x='0.8782' y='0.05' z='1.393'/>
+		<rotation x='-90' y='0' z='-90'/>
+		<property>brickwall_01</property>
+	</box>
+</rig>

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<elementClass name="wooden_parts_c" class="SimpleElement">
+	<string name="component.model">wooden_parts_c.demodel</string>
+	<string name="component.rig">wooden_parts_c.derig</string>
+	<string name="component.audioModel">wooden_parts_c.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="glass">
+			<string key="skin">/content/materials/glass/material.deskin</string>
+		</map>
+		<map key="wood_door_01">
+			<string key="skin">/content/materials/wood_door_01/material.deskin</string>
+		</map>
+		<map key="wood_tile_01">
+			<string key="skin">/content/materials/wood_tile_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<elementClass name="decals_1st_floor" class="SimpleElement">
+	<string name="component.model">decals_1st_floor.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<map name="component.textureReplacements">
+		<map key="dirt_decal_01">
+			<string key="skin">/content/materials/dirt_decal_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0' y='-0.02006' z='0.2147'/>
+		<halfExtends x='0.1164' y='1.404' z='0.7116'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>wood_door_01</property>
+	</box>
+</rig>

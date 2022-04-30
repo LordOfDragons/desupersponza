@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<hull>
+		<position x='0.007902' y='0' z='0'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<point x='5.1' y='-0.06444' z='2.816'/>
+		<point x='5.1' y='1.547' z='-0.006234'/>
+		<point x='5.1' y='-0.06444' z='-2.826'/>
+		<point x='-5.098' y='-0.06444' z='2.816'/>
+		<point x='-5.098' y='1.547' z='-0.006234'/>
+		<point x='-5.098' y='-0.06444' z='-2.826'/>
+		<property>roof_tiles_01</property>
+	</hull>
+	<box>
+		<position x='0.09996' y='1.405' z='2.977'/>
+		<halfExtends x='4.971' y='1.683' z='0.2'/>
+		<rotation x='0' y='-0' z='-0'/>
+	</box>
+</rig>

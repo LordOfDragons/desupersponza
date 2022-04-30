@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gameProject>
+	<name>supersponza</name>
+	<description/>
+	<dataDirectory>data</dataDirectory>
+	<cacheDirectory>cache</cacheDirectory>
+	<baseGameDefinition>DragonScript Basic</baseGameDefinition>
+	<projectGameDefinition>supersponza.degd</projectGameDefinition>
+	<scriptModule version='1.12'>DragonScript</scriptModule>
+</gameProject>

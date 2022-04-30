@@ -1,0 +1,907 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<world>
+	<size x='50' y='50' z='50'/>
+	<gravity x='0' y='-9.81' z='0'/>
+	<worldEditor>
+		<skyPath>/content/skies/supersponza.desky</skyPath>
+<skyController name='daytime'>11.871</skyController>
+	</worldEditor>
+	<nextObjectID>b5</nextObjectID>
+	
+	<object id='1'>
+		<classname>columns_1stfloor_01a</classname>
+		<position x='-8.33697' y='4.76837e-07' z='2.93791'/>
+	</object>
+	<object id='2'>
+		<classname>columns_1stfloor_01a</classname>
+		<position x='-8.33744' y='1.82539e-07' z='-3.00079'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='3'>
+		<classname>columns_1stfloor_01a</classname>
+		<position x='8.09016' y='1.82539e-07' z='2.94052'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='4'>
+		<classname>columns_1stfloor_01a</classname>
+		<position x='8.0823' y='1.82539e-07' z='-3.00258'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='5'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='3.85965' y='6.10854' z='3.10627'/>
+	</object>
+	<object id='6'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='-0.142972' y='6.10776' z='3.10325'/>
+	</object>
+	<object id='7'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='-4.15814' y='6.10854' z='3.1034'/>
+	</object>
+	<object id='8'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='3.85965' y='6.10854' z='-3.13147'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='9'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='-0.147401' y='6.10776' z='-3.12076'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='a'>
+		<classname>column_2ndfloor_01</classname>
+		<position x='-4.14801' y='6.10854' z='-3.1276'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='b'>
+		<classname>column_2ndfloor_04</classname>
+		<position x='-8.31865' y='6.10854' z='2.97919'/>
+	</object>
+	<object id='c'>
+		<classname>column_2ndfloor_04</classname>
+		<position x='-8.3288' y='6.10854' z='-2.98084'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='d'>
+		<classname>column_2ndfloor_04</classname>
+		<position x='8.06749' y='6.06661' z='2.95193'/>
+		<rotation x='-0' y='-90' z='1.00179e-05'/>
+	</object>
+	<object id='e'>
+		<classname>column_2ndfloor_04</classname>
+		<position x='8.06954' y='6.10854' z='-2.99211'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='f'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='1.85939' y='6.10016' z='-3.08482'/>
+	</object>
+	<object id='10'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='-2.1651' y='6.10016' z='-3.08482'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='11'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='-6.15365' y='6.10016' z='-3.08482'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='12'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='1.86838' y='6.10016' z='3.07245'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='13'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='-2.15611' y='6.10016' z='3.07245'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='14'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='-6.17025' y='6.10016' z='3.07245'/>
+	</object>
+	<object id='15'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='-8.4205' y='6.10016' z='-0.0306159'/>
+		<rotation x='-0' y='-1.00179e-05' z='0'/>
+	</object>
+	<object id='16'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='5.87353' y='6.10016' z='-3.08482'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='17'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='8.14419' y='6.10016' z='0.0216693'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='18'>
+		<classname>column_2ndfloor_09</classname>
+		<position x='5.85693' y='6.10016' z='3.07245'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='19'>
+		<classname>columns_1stfloor_02a</classname>
+		<position x='-4.21201' y='2.38419e-07' z='3.11527'/>
+	</object>
+	<object id='1a'>
+		<classname>columns_1stfloor_02a</classname>
+		<position x='-0.147714' y='2.38419e-07' z='3.11929'/>
+	</object>
+	<object id='1b'>
+		<classname>columns_1stfloor_02a</classname>
+		<position x='3.88678' y='2.38419e-07' z='3.10652'/>
+	</object>
+	<object id='1c'>
+		<classname>columns_1stfloor_02b</classname>
+		<position x='-4.21089' y='-1.18278e-07' z='-3.18333'/>
+	</object>
+	<object id='1d'>
+		<classname>columns_1stfloor_02b</classname>
+		<position x='-0.149733' y='-1.18278e-07' z='-3.17963'/>
+	</object>
+	<object id='1e'>
+		<classname>columns_1stfloor_02b</classname>
+		<position x='3.89642' y='-1.18278e-07' z='-3.15904'/>
+	</object>
+	<object id='1f'>
+		<classname>decals_1st_floor</classname>
+		<position x='11.1168' y='1.171' z='-4.78029'/>
+		<rotation x='-90' y='0' z='-90'/>
+	</object>
+	<object id='20'>
+		<classname>decals_2nd_floor</classname>
+		<position x='-0.167924' y='8.07901' z='-0.308495'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='21'>
+		<classname>decals_3rd_floor</classname>
+		<position x='-0.0910236' y='12.53' z='0.181522'/>
+	</object>
+	<object id='22'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='1.85234' y='4.82332' z='-4.79582'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='23'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='5.92147' y='4.82332' z='-4.79582'/>
+		<rotation x='-0' y='35' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='24'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='9.82265' y='4.82332' z='-4.79582'/>
+		<rotation x='-0' y='-55' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='25'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-6.14687' y='4.82332' z='4.73049'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='26'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-2.18802' y='4.82332' z='4.74016'/>
+		<rotation x='-0' y='-5' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='27'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='1.85234' y='4.82332' z='4.74016'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='28'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='5.92147' y='4.82332' z='4.74016'/>
+		<rotation x='-0' y='35' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='29'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='9.82265' y='4.82332' z='4.74016'/>
+		<rotation x='-0' y='-35' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='2a'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-10.0275' y='4.82332' z='-4.79582'/>
+		<rotation x='-0' y='45' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='2b'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-10.1581' y='4.82332' z='4.74303'/>
+		<rotation x='-0' y='10' z='0'/>
+		<property key='light.trigger'>@lights.floor0.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='2c'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-2.18802' y='4.82332' z='-4.79582'/>
+		<rotation x='-0' y='-5' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='2d'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-6.14687' y='4.82332' z='-4.80549'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor0.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='2e'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='13.5986' y='4.56531' z='0.0635194'/>
+		<property key='light.trigger'>@lights.floor0.lionhead</property>
+		<property key='light.range'>8</property>
+	</object>
+	<object id='2f'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-2.16278' y='10.3834' z='-4.69678'/>
+		<rotation x='-0' y='45' z='0'/>
+		<property key='light.trigger'>@lights.floor1.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='30'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='5.85327' y='10.3834' z='-4.66286'/>
+		<rotation x='-0' y='1.00179e-05' z='0'/>
+		<property key='light.trigger'>@lights.floor1.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='31'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='9.75431' y='10.3834' z='-4.7273'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor1.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='32'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-10.0649' y='10.3834' z='4.72007'/>
+		<rotation x='-0' y='30' z='0'/>
+		<property key='light.trigger'>@lights.floor1.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='33'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-2.16278' y='10.3834' z='4.66583'/>
+		<rotation x='-0' y='25' z='0'/>
+		<property key='light.trigger'>@lights.floor1.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='34'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='5.84779' y='10.3834' z='4.66953'/>
+		<rotation x='-0' y='40' z='0'/>
+		<property key='light.trigger'>@lights.floor1.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='35'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='9.77282' y='10.3834' z='4.73839'/>
+		<rotation x='-0' y='5.00001' z='0'/>
+		<property key='light.trigger'>@lights.floor1.leftwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='36'>
+		<classname>lamps_1stfloor_00</classname>
+		<position x='-10.0678' y='10.3834' z='-4.72571'/>
+		<property key='light.trigger'>@lights.floor1.rightwing</property>
+		<property key='light.intensity'>0.5</property>
+		<property key='light.range'>7.5</property>
+	</object>
+	<object id='37'>
+		<classname>lamp_1stfloor_entrance</classname>
+		<position x='-15.6108' y='3.88309' z='-0.918658'/>
+		<property key='light.trigger'>@lights.floor0.entrance</property>
+		<property key='light.range'>8</property>
+	</object>
+	<object id='38'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='-2.27433' y='5.45093' z='-7.4685'/>
+	</object>
+	<object id='39'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='1.84121' y='5.45093' z='-7.4685'/>
+	</object>
+	<object id='3a'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='5.73663' y='5.45093' z='-7.4685'/>
+	</object>
+	<object id='3b'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='-10.0585' y='5.45093' z='-7.4685'/>
+	</object>
+	<object id='3c'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='9.63487' y='5.45093' z='-7.4685'/>
+	</object>
+	<object id='3d'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='12.4217' y='5.45093' z='-4.70815'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='3e'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='12.4244' y='5.45093' z='4.69777'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='3f'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='-2.25699' y='5.45093' z='7.43012'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='40'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='1.91479' y='5.45093' z='7.43012'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='41'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='5.84104' y='5.45093' z='7.43012'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='42'>
+		<classname>ornament_door_2ndfloor_01</classname>
+		<position x='9.69232' y='5.45093' z='7.43012'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='43'>
+		<classname>ornament_windows</classname>
+		<position x='5.78514' y='12.1832' z='-2.94834'/>
+	</object>
+	<object id='44'>
+		<classname>ornament_windows</classname>
+		<position x='1.82907' y='12.1832' z='-2.94834'/>
+	</object>
+	<object id='45'>
+		<classname>ornament_windows</classname>
+		<position x='-2.17411' y='12.1832' z='-2.94834'/>
+	</object>
+	<object id='46'>
+		<classname>ornament_windows</classname>
+		<position x='-6.13381' y='12.1832' z='-2.94834'/>
+	</object>
+	<object id='47'>
+		<classname>ornament_windows</classname>
+		<position x='-8.29071' y='12.1862' z='0.0204908'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='48'>
+		<classname>ornament_windows</classname>
+		<position x='-6.12937' y='12.1832' z='2.96173'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='49'>
+		<classname>ornament_windows</classname>
+		<position x='-2.17331' y='12.1832' z='2.96173'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='4a'>
+		<classname>ornament_windows</classname>
+		<position x='1.82988' y='12.1832' z='2.96173'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='4b'>
+		<classname>ornament_windows</classname>
+		<position x='5.78958' y='12.1832' z='2.96173'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='4c'>
+		<classname>ornament_doors_03</classname>
+		<position x='-6.19555' y='1.79438' z='6.13333'/>
+	</object>
+	<object id='4d'>
+		<classname>ornament_doors_03</classname>
+		<position x='-2.18166' y='1.79438' z='6.13333'/>
+	</object>
+	<object id='4e'>
+		<classname>ornament_doors_03</classname>
+		<position x='1.81836' y='1.79438' z='6.13333'/>
+	</object>
+	<object id='4f'>
+		<classname>ornament_doors_03</classname>
+		<position x='5.77697' y='1.79438' z='6.13333'/>
+	</object>
+	<object id='50'>
+		<classname>ornament_doors_03</classname>
+		<position x='11.2302' y='1.79438' z='4.65764'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='51'>
+		<classname>ornament_doors_03</classname>
+		<position x='9.72021' y='1.79438' z='6.1393'/>
+	</object>
+	<object id='52'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='-6.21775' y='-0.00991654' z='6.15999'/>
+	</object>
+	<object id='53'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='-2.18775' y='-0.00991654' z='6.15999'/>
+	</object>
+	<object id='54'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='1.81225' y='-0.00991654' z='6.15999'/>
+	</object>
+	<object id='55'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='5.7457' y='-0.00991654' z='6.15999'/>
+	</object>
+	<object id='56'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='9.71827' y='-0.00991654' z='6.15999'/>
+	</object>
+	<object id='57'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='11.2383' y='-0.00991654' z='-4.64203'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='58'>
+		<classname>walls_1stfloor_01a</classname>
+		<position x='9.71437' y='-0.00991654' z='-6.16981'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='59'>
+		<classname>walls_1stfloor_01b</classname>
+		<position x='5.85444' y='-0.00991654' z='-6.16981'/>
+	</object>
+	<object id='5a'>
+		<classname>walls_1stfloor_01b</classname>
+		<position x='1.9011' y='-0.00991654' z='-6.16981'/>
+	</object>
+	<object id='5b'>
+		<classname>walls_1stfloor_01b</classname>
+		<position x='-2.1278' y='-0.00991654' z='-6.1698'/>
+	</object>
+	<object id='5c'>
+		<classname>walls_1stfloor_01b</classname>
+		<position x='-13.8413' y='-0.546201' z='1.52856'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='5d'>
+		<classname>walls_1stfloor_01b</classname>
+		<position x='-17.4609' y='-0.00991654' z='1.55725'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='5e'>
+		<classname>walls_floor_03b</classname>
+		<position x='3.87316' y='14.9295' z='-2.91623'/>
+	</object>
+	<object id='5f'>
+		<classname>walls_floor_03b</classname>
+		<position x='-0.12637' y='14.9302' z='-2.91623'/>
+	</object>
+	<object id='60'>
+		<classname>walls_floor_03b</classname>
+		<position x='-4.12783' y='14.9292' z='-2.91623'/>
+	</object>
+	<object id='61'>
+		<classname>walls_floor_03b</classname>
+		<position x='-8.24848' y='14.932' z='0.0361426'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='62'>
+		<classname>walls_floor_03b</classname>
+		<position x='-4.20925' y='14.9295' z='2.94204'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='63'>
+		<classname>walls_floor_03b</classname>
+		<position x='-0.209724' y='14.9302' z='2.94205'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='64'>
+		<classname>walls_floor_03b</classname>
+		<position x='3.79173' y='14.9292' z='2.94205'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='65'>
+		<classname>lionhead</classname>
+		<position x='15.9458' y='0.228044' z='0.0993808'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='66'>
+		<classname>exterior</classname>
+		<position x='0' y='0' z='0'/>
+	</object>
+	<object id='67'>
+		<classname>sponza_ornament</classname>
+		<position x='7.89951' y='13.3263' z='-0.0111138'/>
+	</object>
+	<object id='68'>
+		<classname>ornament_doors_09a</classname>
+		<position x='1.88011' y='2.36691' z='-6.15545'/>
+	</object>
+	<object id='69'>
+		<classname>ornament_doors_09a</classname>
+		<position x='-2.15157' y='2.36691' z='-6.15545'/>
+	</object>
+	<object id='6a'>
+		<classname>ornament_doors_09a</classname>
+		<position x='11.1916' y='2.36692' z='-4.6204'/>
+		<rotation x='-0' y='90' z='0'/>
+	</object>
+	<object id='6b'>
+		<classname>ornament_door_2ndfloor_04</classname>
+		<position x='-6.16054' y='5.43258' z='-7.45278'/>
+	</object>
+	<object id='6c'>
+		<classname>ornament_door_2ndfloor_04</classname>
+		<position x='-10.072' y='5.43258' z='7.41067'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='6d'>
+		<classname>ornament_door_2ndfloor_04</classname>
+		<position x='-12.7198' y='5.43255' z='4.69794'/>
+		<rotation x='-0' y='-90' z='0'/>
+	</object>
+	<object id='6e'>
+		<classname>arch_stones_01</classname>
+		<position x='-0.14015' y='4.06917' z='3.08721'/>
+	</object>
+	<object id='6f'>
+		<classname>arch_stones_01</classname>
+		<position x='-0.140149' y='4.06917' z='-3.11477'/>
+		<rotation x='-0' y='180' z='0'/>
+	</object>
+	<object id='70'>
+		<classname>arch_stones_03</classname>
+		<position x='-0.113765' y='4.37389' z='-0.0168814'/>
+		<rotation x='-0' y='1.00179e-05' z='0'/>
+	</object>
+	<object id='71'>
+		<classname>arch_wall_2ndfloor</classname>
+		<position x='-0.25838' y='9.92578' z='-0.0209689'/>
+	</object>
+	<object id='72'>
+		<classname>ceiling_1stfloor_01</classname>
+		<position x='-0.402122' y='4.09616' z='-0.150804'/>
+	</object>
+	<object id='73'>
+		<classname>ceiling_1stfloor_02</classname>
+		<position x='-15.2726' y='3.91245' z='-2.09428'/>
+	</object>
+	<object id='74'>
+		<classname>ceiling_2ndfloor</classname>
+		<position x='-0.14895' y='9.55394' z='-0.0502521'/>
+	</object>
+	<object id='75'>
+		<classname>ornament_door_2ndfloor_07</classname>
+		<position x='12.4032' y='5.43764' z='0.12462'/>
+	</object>
+	<object id='76'>
+		<classname>ornament_doors_01</classname>
+		<position x='-15.4816' y='1.52004' z='1.4645'/>
+	</object>
+	<object id='77'>
+		<classname>ornament_doors_02</classname>
+		<position x='-18.3114' y='0.887634' z='-3.91282'/>
+	</object>
+	<object id='78'>
+		<classname>ornament_doors_09</classname>
+		<position x='5.84582' y='1.59806' z='-6.09811'/>
+	</object>
+	<object id='79'>
+		<classname>ornament_doors_10</classname>
+		<position x='9.7226' y='1.81248' z='-6.15758'/>
+	</object>
+	<object id='7a'>
+		<classname>ornament_roof</classname>
+		<position x='-0.899391' y='15.9425' z='-0.00301392'/>
+	</object>
+	<object id='7b'>
+		<classname>ornament_stones_01</classname>
+		<position x='1.2055' y='2.87937' z='-0.133932'/>
+	</object>
+	<object id='7c'>
+		<classname>ornament_stones_2ndfloor</classname>
+		<position x='-0.153206' y='8.43797' z='-0.0290543'/>
+	</object>
+	<object id='7d'>
+		<classname>stone_walls_2ndfloor</classname>
+		<position x='-0.139063' y='7.85509' z='0.11463'/>
+	</object>
+	<object id='7e'>
+		<classname>walls_1stfloor_01</classname>
+		<position x='0' y='0' z='0'/>
+	</object>
+	<object id='7f'>
+		<classname>walls_1stfloor_01c</classname>
+		<position x='13.629' y='1.94268' z='2.51113'/>
+	</object>
+	<object id='80'>
+		<classname>walls_floor_03</classname>
+		<position x='-1.44625' y='13.4525' z='0.0494467'/>
+	</object>
+	<object id='81'>
+		<classname>wood_door</classname>
+		<position x='-19.4919' y='0.778618' z='0.0316568'/>
+	</object>
+	<object id='82'>
+		<classname>wooden_parts</classname>
+		<position x='-19.5555' y='1.85986' z='-0.0138118'/>
+	</object>
+	<object id='83'>
+		<classname>wooden_parts_b</classname>
+		<position x='-19.3783' y='1.39107' z='-2.84613'/>
+	</object>
+	<object id='84'>
+		<classname>wooden_parts_c</classname>
+		<position x='-10.0679' y='2.43011' z='-6.1792'/>
+	</object>
+	<object id='85'>
+		<classname>roof_floor_03_01</classname>
+		<position x='11.0286' y='16.175' z='5.49877'/>
+	</object>
+	<object id='86'>
+		<classname>roof_floor_03_02</classname>
+		<position x='0.820698' y='16.175' z='5.49877'/>
+	</object>
+	<object id='87'>
+		<classname>roof_floor_03_05</classname>
+		<position x='-10.2044' y='16.7035' z='0.144669'/>
+		<rotation x='-0' y='1.00179e-05' z='0'/>
+	</object>
+	<object id='88'>
+		<classname>roof_floor_03_06</classname>
+		<position x='11.9657' y='16.8848' z='0.0180225'/>
+		<rotation x='-0' y='1.00179e-05' z='0'/>
+	</object>
+	<object id='89'>
+		<classname>roof_floor_03_07</classname>
+		<position x='-7.44607' y='16.175' z='5.49877'/>
+	</object>
+	<object id='8a'>
+		<classname>roof_floor_03_08</classname>
+		<position x='-7.51724' y='16.175' z='-5.47675'/>
+		<rotation x='-0' y='1.00179e-05' z='0'/>
+	</object>
+	<object id='8b'>
+		<classname>roof_floor_03_09</classname>
+		<position x='11.0321' y='16.1723' z='-5.47214'/>
+	</object>
+	<object id='8c'>
+		<classname>roof_floor_03_10</classname>
+		<position x='0.840328' y='16.175' z='-5.47674'/>
+	</object>
+	<object id='8d'>
+		<classname>SpawnPoint</classname>
+		<position x='-17.5' y='-0.65' z='-1.15'/>
+		<rotation x='0' y='-90' z='0'/>
+		<property key='name'>player</property>
+	</object>
+	<object id='8e'>
+		<classname>BaseSky</classname>
+		<position x='-17.5' y='2.5' z='-1.15'/>
+		<property key='sky.path'>/content/skies/supersponza.desky</property>
+		<property key='dayTimeSky.dayTime'>11</property>
+	</object>
+	<object id='8f'>
+		<classname>EnvironmentMap</classname>
+		<position x='-15.5336' y='1.71971' z='-0.973137'/>
+		<property key='envMapProbe.influencePriority'>1</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,0.5,-1.5:extends,4.2,3,4.2</property>
+	</object>
+	<object id='90'>
+		<classname>EnvironmentMap</classname>
+		<position x='0.0507487' y='1.43195' z='-0.0668616'/>
+		<property key='envMapProbe.influencePriority'>0</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,12,3,6.5</property>
+	</object>
+	<object id='91'>
+		<classname>EnvironmentMap</classname>
+		<position x='13.364' y='2.13252' z='-0.117789'/>
+		<property key='envMapProbe.influencePriority'>1</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,0,0:extends,2.5,3,2.7</property>
+	</object>
+	<object id='92'>
+		<classname>EnvironmentMap</classname>
+		<position x='13.3343' y='1.94717' z='4.52731'/>
+		<property key='envMapProbe.influencePriority'>2</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,0,0:extends,2,2,2</property>
+	</object>
+	<object id='93'>
+		<classname>EnvironmentMap</classname>
+		<position x='0.0507487' y='7.03195' z='-0.0668616'/>
+		<property key='envMapProbe.influencePriority'>0</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,12,3,6.5</property>
+	</object>
+	<object id='94'>
+		<classname>EnvironmentMap</classname>
+		<position x='0.051' y='12.532' z='-0.067'/>
+		<property key='envMapProbe.influencePriority'>0</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,12,3,3</property>
+	</object>
+	<object id='96'>
+		<classname>EnvironmentMap</classname>
+		<position x='0.051' y='12.532' z='-4.317'/>
+		<property key='envMapProbe.influencePriority'>1</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,12,3,1.3</property>
+	</object>
+	<object id='97'>
+		<classname>EnvironmentMap</classname>
+		<position x='0.051' y='12.532' z='4.383'/>
+		<property key='envMapProbe.influencePriority'>1</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,12,3,1.3</property>
+	</object>
+	<object id='98'>
+		<classname>EnvironmentMap</classname>
+		<position x='-9.649' y='12.532' z='0.033'/>
+		<property key='envMapProbe.influencePriority'>1</property>
+		<property key='envMapProbe.influenceArea'>box:position,0,1,0:extends,1.3,3,6</property>
+	</object>
+	<object id='99'>
+		<classname>SpawnPoint</classname>
+		<position x='11.5141' y='-0.0089995' z='-0.101478'/>
+		<rotation x='0' y='-90' z='0'/>
+		<property key='name'>lionstatue</property>
+	</object>
+	<object id='9a'>
+		<classname>SpawnPoint</classname>
+		<position x='-10.3668' y='5.40109' z='0.0679517'/>
+		<rotation x='0' y='-90' z='0'/>
+		<property key='name'>1stfloor</property>
+	</object>
+	<object id='9b'>
+		<classname>SpawnPoint</classname>
+		<position x='-7.75135' y='11.6786' z='-2.3963'/>
+		<rotation x='0' y='-60' z='0'/>
+		<property key='name'>2ndfloor</property>
+	</object>
+	<object id='9c'>
+		<classname>SpawnPoint</classname>
+		<position x='-9.043' y='16.8' z='-3.648'/>
+		<rotation x='0' y='-60' z='0'/>
+		<property key='name'>rooftop</property>
+	</object>
+	<object id='9d'>
+		<classname>curtain_01</classname>
+		<position x='-8.25756' y='3.08428' z='-0.00172639'/>
+	</object>
+	<object id='9e'>
+		<classname>curtain_02</classname>
+		<position x='-6.29931' y='2.22406' z='-3.14723'/>
+	</object>
+	<object id='9f'>
+		<classname>curtain_03</classname>
+		<position x='-2.12928' y='2.22472' z='-3.1419'/>
+	</object>
+	<object id='a0'>
+		<classname>curtain_04</classname>
+		<position x='1.98966' y='2.22473' z='-3.10409'/>
+	</object>
+	<object id='a1'>
+		<classname>curtain_05</classname>
+		<position x='5.75825' y='2.22406' z='-3.15532'/>
+	</object>
+	<object id='a2'>
+		<classname>curtain_06</classname>
+		<position x='5.99407' y='2.22406' z='3.05974'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='a3'>
+		<classname>curtain_03</classname>
+		<position x='1.82966' y='2.22473' z='3.05591'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='a4'>
+		<classname>curtain_04</classname>
+		<position x='-2.28928' y='2.22472' z='3.0181'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='a5'>
+		<classname>curtain_09</classname>
+		<position x='-6.06329' y='2.22406' z='3.05473'/>
+		<rotation x='0' y='180' z='0'/>
+	</object>
+	<object id='a6'>
+		<classname>curtain_hanging_01</classname>
+		<position x='-4.14922' y='4.8286' z='-3.02131'/>
+	</object>
+	<object id='a7'>
+		<classname>curtain_hanging_02</classname>
+		<position x='-0.13777' y='4.77697' z='-3.01456'/>
+	</object>
+	<object id='a8'>
+		<classname>curtain_hanging_03</classname>
+		<position x='3.87652' y='4.94' z='-2.9598'/>
+	</object>
+	<object id='a9'>
+		<classname>curtain_hanging_01</classname>
+		<position x='3.85881' y='4.8286' z='2.99264'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='aa'>
+		<classname>curtain_hanging_02</classname>
+		<position x='-0.13777' y='4.77697' z='2.98544'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='ab'>
+		<classname>curtain_hanging_03</classname>
+		<position x='-4.17113' y='4.94' z='2.9322'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='ac'>
+		<classname>curtain_holder_01</classname>
+		<position x='-0.164567' y='4.03139' z='-3.27065'/>
+	</object>
+	<object id='ad'>
+		<classname>curtain_holder_01</classname>
+		<position x='-0.135181' y='4.03139' z='3.17619'/>
+		<rotation x='-0' y='-180' z='0'/>
+	</object>
+	<object id='ae'>
+		<classname>BaseSpeaker</classname>
+		<position x='-2.09861' y='25.2436' z='0.28747'/>
+		<property key='speaker.trigger'>@sound.airplane&#38;@daytime.day</property>
+		<property key='speaker.distanceOffset'>200</property>
+		<property key='speaker.sound'>/content/sound/airplane1.ogg</property>
+		<property key='speaker.volume'>128</property>
+		<property key='speaker.looping'>0</property>
+		<property key='speaker.range'>100</property>
+		<property key='speaker.playing'>0</property>
+	</object>
+	<object id='af'>
+		<classname>TriggerTimer</classname>
+		<position x='-2.09861' y='25.2436' z='0.73747'/>
+		<property key='timer.pulse'>1</property>
+		<property key='timer.startActivated'>1</property>
+		<property key='timer.timeoutRearm'>1</property>
+		<property key='timer.timeout'>30</property>
+		<property key='timer.timeoutSpread'>15</property>
+		<property key='timer.target'>sound.airplane</property>
+	</object>
+	<object id='b0'>
+		<classname>BaseSpeaker</classname>
+		<position x='-19.0503' y='1.08972' z='-1.51068'/>
+		<property key='speaker.sound'>/content/sound/citynoise1.ogg</property>
+		<property key='speaker.volume'>16</property>
+		<property key='speaker.trigger'>@daytime.day</property>
+		<property key='speaker.range'>100</property>
+		<property key='speaker.distanceOffset'>20</property>
+	</object>
+	<object id='b4'>
+		<classname>BaseSpeaker</classname>
+		<position x='-19.0503' y='1.33972' z='-1.51068'/>
+		<property key='speaker.sound'>/content/sound/citynoise2.ogg</property>
+		<property key='speaker.volume'>6</property>
+		<property key='speaker.trigger'>!@daytime.day</property>
+		<property key='speaker.range'>100</property>
+		<property key='speaker.distanceOffset'>20</property>
+	</object>
+</world>

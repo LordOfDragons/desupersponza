@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<elementClass name="wood_door" class="SimpleElement">
+	<string name="component.model">wood_door.demodel</string>
+	<string name="component.rig">wood_door.derig</string>
+	<string name="component.audioModel">wood_door.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="wood_door_01">
+			<string key="skin">/content/materials/wood_door_01/material.deskin</string>
+		</map>
+		<map key="wood_tile_01">
+			<string key="skin">/content/materials/wood_tile_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

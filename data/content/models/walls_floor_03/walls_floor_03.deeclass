@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<elementClass name="walls_floor_03" class="SimpleElement">
+	<string name="component.model">walls_floor_03.demodel</string>
+	<string name="component.rig">walls_floor_03.derig</string>
+	<string name="component.occlusionMesh">walls_floor_03.deoccmesh</string>
+	<string name="component.audioModel">walls_floor_03.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="arch_stone_wall_01">
+			<string key="skin">/content/materials/arch_stone_wall_01/material.deskin</string>
+		</map>
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+		<map key="stone_01_tile">
+			<string key="skin">/content/materials/stone_01_tile/material.deskin</string>
+		</map>
+		<map key="door_stoneframe_01">
+			<string key="skin">/content/materials/door_stoneframe_01/material.deskin</string>
+		</map>
+		<map key="brickwall_01">
+			<string key="skin">/content/materials/brickwall_01/material.deskin</string>
+		</map>
+		<map key="brickwall_02">
+			<string key="skin">/content/materials/brickwall_02/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

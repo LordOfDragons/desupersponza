@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<elementClass name="arch_stones_03" class="SimpleElement">
+	<string name="component.model">arch_stones_03.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.audioModel">arch_stones_03.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="arch_stone_wall_01">
+			<string key="skin">/content/materials/arch_stone_wall_01/material.deskin</string>
+		</map>
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="brickwall_02">
+			<string key="skin">/content/materials/brickwall_02/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

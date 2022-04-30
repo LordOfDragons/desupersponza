@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='0.01318' y='1.408' z='-2.986'/>
+		<halfExtends x='5.228' y='1.683' z='0.2'/>
+		<rotation x='0' y='-0' z='-0'/>
+	</box>
+	<box>
+		<position x='5.245' y='1.408' z='-0.1126'/>
+		<halfExtends x='3.019' y='1.683' z='0.2'/>
+		<rotation x='0' y='90' z='-0'/>
+	</box>
+</rig>

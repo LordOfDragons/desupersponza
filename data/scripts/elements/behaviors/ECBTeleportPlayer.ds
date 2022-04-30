@@ -1,0 +1,109 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.LoadSave
+pin Dragengine.Scenery
+pin Dragengine.Preloading
+pin Dragengine.Utils
+
+
+/**
+ * Behavior teleporting player. Moves player to spawn point and plays a sound.
+ */
+class ECBTeleportPlayer extends DefaultECBehavior
+	/** instance. */
+	class Instance extends DefaultECBehaviorInstance
+		protected var ECBTeleportPlayer pECBehavior
+		
+		/** Create behavior instance. */
+		public func new(ECBTeleportPlayer ecbehavior, BehaviorElement element) super(element)
+			pECBehavior = ecbehavior
+		end
+		
+		/** Dispose of behavior instance. */
+		public func void dispose()
+			super.dispose()
+		end
+		
+		/** Teleport. */
+		public func void teleport(String spawnPoint)
+			// Get player which is the element owning this behavior
+			var BehaviorElement element = getElement()
+			
+			// Get active microphone. This is the one the player is hearing right now
+			var Microphone microphone = AudioSystem.getActiveMicrophone()
+			
+			// Get the spawn point
+			var GameWorld gameWorld = element.getGameWorld()
+			var SpawnPoint sp = gameWorld.getSpawnPoints().getNamed(spawnPoint)
+			
+			// Create speaker playing sound. Set the position to the microphone position
+			// then attach the speaker to the player. This way the speaker moves also
+			// to the new spot but stays relative to the player
+			var Speaker speaker = Speaker.new()
+			speaker.setSound(pECBehavior.soundTeleport.getSound())
+			speaker.setRange(20)
+			speaker.setLayerMask(LayerMask.newWith(BaseGameApp.WorldLayerBit.audio))
+			speaker.setPosition(microphone.getPosition())
+			speaker.play()
+			gameWorld.addOneShotSpeaker(speaker)
+			
+			ECBehaviorColliderAI.getInstanceIn(element).getCollider().attachStatic(speaker)
+			
+			// Move player to spawn point
+			sp.spawn(gameWorld, element)
+		end
+	end
+	
+	
+	public var ECPSound soundTeleport
+	
+	
+	/** Create behavior. */
+	public func new(BehaviorElementClass eclass) super(eclass)
+		soundTeleport = ECPSound.new("teleport.sound", "/content/sound/teleport.ogg")
+		eclass.addProperty(soundTeleport)
+		
+		eclass.addBehavior(this)
+	end
+	
+	
+	/** Get instance in element from owner element class. */
+	public func Instance instance(BehaviorElement element)
+		return element.getInstanceAt(this.getInstanceIndex()) cast Instance
+	end
+	
+	/** Get instance in element or \em null if absent. */
+	static public func Instance getInstanceIn(BehaviorElement element)
+		return element.findInstance(block Instance each
+			return true
+		end) cast Instance
+	end
+	
+	
+	/** Create Behavior instance. */
+	public func ECBehaviorInstance createInstance(BehaviorElement element)
+		return Instance.new(this, element)
+	end
+end

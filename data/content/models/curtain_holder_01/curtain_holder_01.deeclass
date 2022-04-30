@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<elementClass name="curtain_holder_01" class="SSElement">
+	<string name="component.model">curtain_holder_01.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="trigger(show)">@curtains.show</string>
+	<map name="component.textureReplacements">
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

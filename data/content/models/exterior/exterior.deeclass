@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<elementClass name="exterior" class="SimpleElement">
+	<string name="component.model">exterior.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.occlusionMesh">exterior.deoccmesh</string>
+	<string name="component.audioModel">exterior.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="arch_stone_wall_01">
+			<string key="skin">/content/materials/arch_stone_wall_01/material.deskin</string>
+		</map>
+		<map key="stone_01_tile">
+			<string key="skin">/content/materials/stone_01_tile/material.deskin</string>
+		</map>
+		<map key="brickwall_01">
+			<string key="skin">/content/materials/brickwall_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

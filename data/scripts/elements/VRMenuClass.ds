@@ -1,0 +1,75 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Commands
+pin Dragengine.Gui
+pin Dragengine.Scenery
+
+
+/**
+ * VR Menu element class.
+ */
+class VRMenuClass extends BehaviorElementClass
+	public var ECBehaviorComponent component
+	public var ECBehaviorCollider collider
+	public var ECBehaviorDynamicSkin dynamicSkin
+	public var ECBehaviorRenderableDesktop renderableDesktop
+	public var ECBehaviorVRHandPointedAt vrHandPointedAt
+	public var ECBehaviorControlDesktop controlDesktop
+	
+	
+	/** Create element class. */
+	public func new() this("VRMenu")
+	end
+	
+	public func new(String name) super(name)
+		setPersistable(false)
+		
+		component = ECBehaviorComponent.new(this, null)
+		component.setCommonPath("/content/models/vr_menu", "menu.demodel", "menu.deskin", "menu.derig")
+		
+		collider = ECBehaviorCollider.new(this, component)
+		collider.getCollider().getPhysicsType().setEnumeration(CollisionResponse.kinematic)
+		collider.getCollider().getLocalGravity().setVector(Vector.new())
+		
+		dynamicSkin = ECBehaviorDynamicSkin.new(this, component)
+		
+		renderableDesktop = ECBehaviorRenderableDesktop.new(this, dynamicSkin)
+		renderableDesktop.getGuiTheme().setPath("/content/ui/main.guitheme.xml")
+		renderableDesktop.getRenderable().setValue("screen.content")
+		renderableDesktop.getRenderableSolidity().setValue("screen.solidity")
+		renderableDesktop.getSize().setPoint(Point.new(300, 400))
+		
+		renderableDesktop.addContentCreator(block ECBehaviorRenderableDesktop.Instance instance
+			WindowMenu.new(instance.getDesktop(), instance)
+		end)
+		
+		vrHandPointedAt = ECBehaviorVRHandPointedAt.new(this)
+		
+		controlDesktop = ECBehaviorControlDesktop.new(this, renderableDesktop)
+		controlDesktop.getLowerLeft().setVector(Vector.new(0.182, -0.242, 0))
+		controlDesktop.getLowerRight().setVector(Vector.new(-0.182, -0.242, 0))
+		controlDesktop.getUpperLeft().setVector(Vector.new(0.182, 0.242, 0))
+	end
+end

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<elementClass name="walls_1stfloor_01c" class="SimpleElement">
+	<string name="component.model">walls_1stfloor_01c.demodel</string>
+	<string name="component.rig">walls_1stfloor_01c.derig</string>
+	<string name="component.audioModel">walls_1stfloor_01c.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="arch_stone_wall_01">
+			<string key="skin">/content/materials/arch_stone_wall_01/material.deskin</string>
+		</map>
+		<map key="stone_trims_01">
+			<string key="skin">/content/materials/stone_trims_01/material.deskin</string>
+		</map>
+		<map key="window_frame_01">
+			<string key="skin">/content/materials/window_frame_01/material.deskin</string>
+		</map>
+		<map key="stone_01_tile">
+			<string key="skin">/content/materials/stone_01_tile/material.deskin</string>
+		</map>
+		<map key="floor_tiles_01">
+			<string key="skin">/content/materials/floor_tiles_01/material.deskin</string>
+		</map>
+		<map key="stones_2ndfloor_01">
+			<string key="skin">/content/materials/stones_2ndfloor_01/material.deskin</string>
+		</map>
+		<map key="door_stoneframe_02">
+			<string key="skin">/content/materials/door_stoneframe_02/material.deskin</string>
+		</map>
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="glass">
+			<string key="skin">/content/materials/glass/material.deskin</string>
+		</map>
+		<map key="brickwall_01">
+			<string key="skin">/content/materials/brickwall_01/material.deskin</string>
+		</map>
+		<map key="brickwall_02">
+			<string key="skin">/content/materials/brickwall_02/material.deskin</string>
+		</map>
+		<map key="stone_trims_02">
+			<string key="skin">/content/materials/stone_trims_02/material.deskin</string>
+		</map>
+		<map key="ceiling_plaster_02">
+			<string key="skin">/content/materials/ceiling_plaster_02/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

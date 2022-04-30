@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<elementClass name="ceiling_1stfloor_01" class="SimpleElement">
+	<string name="component.model">ceiling_1stfloor_01.demodel</string>
+	<string name="component.rig">ceiling_1stfloor_01.derig</string>
+	<string name="component.audioModel">ceiling_1stfloor_01.demodel</string>
+	<map name="component.textureReplacements">
+		<map key="stones_2ndfloor_01">
+			<string key="skin">/content/materials/stones_2ndfloor_01/material.deskin</string>
+		</map>
+		<map key="stone_trims_02">
+			<string key="skin">/content/materials/stone_trims_02/material.deskin</string>
+		</map>
+		<map key="ceiling_plaster_02">
+			<string key="skin">/content/materials/ceiling_plaster_02/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

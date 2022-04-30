@@ -1,0 +1,173 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Gui.Layouts
+pin Dragengine.Gui.Events
+pin Dragengine.Scenery
+
+
+/**
+ * Group (un-)collapsing panel if clicked. Group header shows an arrow and text. The arrow
+ * points to the right if collapsed and down if uncollapsed. Content is added to content
+ * panel. Content panel is shown/hidden if group header is clicked.
+ */
+class CollapsibleGroup extends Panel implements ToggleModelListener
+	/** Clicked toggle visibility listener. */
+	class ClickedToggleVisibility extends ClickedActionListener
+		private var CollapsibleGroup pGroup
+		
+		public func new(CollapsibleGroup group)
+			pGroup = group
+		end
+		
+		public func void onAction()
+			pGroup.getModel().setToggled(not pGroup.getModel().getToggled())
+		end
+	end
+	
+	
+	
+	private var DisplayRotatingImage pArrow
+	private var Label pLabel
+	private var ToggleModel pModel
+	private var Panel pPanelHeader
+	private var Panel pPanelContent
+	
+	
+	
+	/** Create widget. */
+	public func new(String label) this(label, true)
+	end
+	
+	public func new(String label, bool toggled) this(label, DefaultToggleModel.new(toggled))
+	end
+	
+	public func new(String label, ToggleModel model)
+		runWhileBlockingLayout(block
+			setLayout(BorderLayout.new())
+			
+			pPanelHeader = Panel.new(BorderLayout.new(5), block Panel p
+				pArrow = DisplayRotatingImage.new(Image.new("/content/ui/group_arrow.png"))
+				p.addWidget(pArrow, BorderLayout.Area.left)
+				
+				pLabel = Label.new(label)
+				p.addWidget(pLabel, BorderLayout.Area.content)
+			end)
+			addWidget(pPanelHeader, BorderLayout.Area.top)
+			
+			pPanelContent = Panel.new(FlowLayout.new(LayoutAxis.y))
+			addWidget(pPanelContent, BorderLayout.Area.content)
+			
+			setDesignerSelector("CollapsibleGroup")
+			
+			pModel = model
+			model.addListener(this)
+			
+			pPanelHeader.addMouseListener(ClickedToggleVisibility.new(this))
+			pPanelHeader.addMouseListener(ParentWheelActionListener.new(this))
+			
+			updateWidgets()
+		end)
+	end
+	
+	public func new(String label, Layout layout, Block addContent) this(label)
+		pPanelContent.runWhileBlockingLayout(block
+			pPanelContent.setLayout(layout)
+			addContent.run(pPanelContent)
+		end)
+	end
+	
+	public func new(String label, bool toggled, Layout layout, Block addContent) this(label, toggled)
+		pPanelContent.runWhileBlockingLayout(block
+			pPanelContent.setLayout(layout)
+			addContent.run(pPanelContent)
+		end)
+	end
+	
+	public func new(String label, ToggleModel model, Layout layout, Block addContent) this(label, model)
+		pPanelContent.runWhileBlockingLayout(block
+			pPanelContent.setLayout(layout)
+			addContent.run(pPanelContent)
+		end)
+	end
+	
+	/** Dispose of window. */
+	public func void dispose()
+		if pModel != null
+			pModel.removeListener(this)
+			pModel = null
+		end
+		
+		pArrow = null
+		pLabel = null
+		pPanelHeader = null
+		pPanelContent = null
+		
+		super.dispose()
+	end
+	
+	
+	
+	
+	/** Model. */
+	public func ToggleModel getModel()
+		return pModel
+	end
+	
+	/** Content panel. */
+	public func Panel getPanelContent()
+		return pPanelContent
+	end
+	
+	
+	/** Toggle changed. Shows or hides toggle panel. */
+	public func void toggledChanged(ToggleModel model)
+		updateWidgets()
+	end
+	
+	
+	
+	/** Set designer selector. */
+	public func void setDesignerSelector(String selector)
+		super.setDesignerSelector(selector)
+		pPanelHeader.setDesignerSelector("Panel." + selector + ".Header")
+		pArrow.setDesignerSelector("Image." + selector)
+		pLabel.setDesignerSelector("Label." + selector)
+		pPanelContent.setDesignerSelector("Panel." + selector + ".Content")
+	end
+	
+	
+	
+	/** Update widgets depending on toggled state. */
+	protected func void updateWidgets()
+		if pModel.getToggled()
+			pArrow.setRotation(0)
+			pPanelContent.setVisible(true)
+			
+		else
+			pArrow.setRotation(-90)
+			pPanelContent.setVisible(false)
+		end
+	end
+end

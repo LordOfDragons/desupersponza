@@ -1,0 +1,111 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Scenery
+
+
+/**
+ * VR Player element class.
+ */
+class VRPlayerActorClass extends BaseVRActorClass
+	public var ECPSoundList footStepSounds
+	public var ECBVRMenu vrmenu
+	public var ECBehaviorVRControlDesktop rightHandControlDesktop
+	public var ECBehaviorVRControlDesktop leftHandControlDesktop
+	public var ECBTeleportPlayer teleportPlayer
+	
+	
+	/**
+	 * Create element class.
+	 */
+	public func new() super("VRPlayerActor")
+		getVRRightHand().getUseVendorModel().setValue(false)
+		getVRRightHand().getComponent().setCommonPath("/content/models/vr_hands",\
+			"right.demodel", "hand.deskin", "right.derig")
+		
+		getVRLeftHand().getUseVendorModel().setValue(false)
+		getVRLeftHand().getComponent().setCommonPath("/content/models/vr_hands",\
+			"left.demodel", "hand.deskin", "left.derig")
+		
+		// By default only rotation of hand joints are applied. This works better with
+		// various kinds of hand models and is easier to work with. Only rotations though
+		// can not fully reproduce the hand pose
+// 		getVRRightHandPose().getFingerTipDistance().setValue(0.1667)
+// 		getVRRightHandPose().getOnlyRotation().setValue(false)
+		
+// 		getVRLeftHandPose().getFingerTipDistance().setValue(0.1667)
+// 		getVRLeftHandPose().getOnlyRotation().setValue(false)
+		
+		// Set hand pose bones to be per-hand suffixed bone names. This makes the behaviors
+		// use bone names like "wrist.r" and "wrist.l" instad of just "wrist"
+		getVRRightHandPose().setHandBoneNames(true)
+		getVRLeftHandPose().setHandBoneNames(false)
+		
+		// Enable physics interaction of the hands with the world
+// 		getVRRightHand().setPhysics()
+// 		getVRLeftHand().setPhysics()
+		
+		// Set the hand point-at distance to 10m
+		getVRRightHandPointAt().getRange().setValue(10)
+		getVRLeftHandPointAt().getRange().setValue(10)
+		
+		// Set the bone and position to use for attaching objects to the hands
+		getVRRightHandAttachSlot().setAttachBone("attachHand.r")
+		getVRLeftHandAttachSlot().setAttachBone("attachHand.l")
+		
+		// Set the action factory to use to create the initial player actions
+		getAIAction().setActionFactory(PlayerActionVR.Factory.new())
+		
+		getVRRightHandAction().setActionFactory(PlayerHandAction.Factory.new())
+		getVRLeftHandAction().setActionFactory(PlayerHandAction.Factory.new())
+		
+		// Foot step sounds to play. Randomly chosen
+		footStepSounds = ECPSoundList.new("footStepSounds")
+		footStepSounds.addPath("/content/sound/footstep1.ogg")
+		footStepSounds.addPath("/content/sound/footstep2.ogg")
+		footStepSounds.addPath("/content/sound/footstep3.ogg")
+		footStepSounds.addPath("/content/sound/footstep4.ogg")
+		footStepSounds.addPath("/content/sound/footstep5.ogg")
+		footStepSounds.addPath("/content/sound/footstep6.ogg")
+		addProperty(footStepSounds)
+		
+		// Add VR Menu handler
+		vrmenu = ECBVRMenu.new(this)
+		
+		// Control desktop behavior
+		rightHandControlDesktop = ECBehaviorVRControlDesktop.new(this, getVRRightHandPointAt())
+		leftHandControlDesktop = ECBehaviorVRControlDesktop.new(this, getVRLeftHandPointAt())
+		
+		// Teleport player support
+		teleportPlayer = ECBTeleportPlayer.new(this)
+	end
+	
+	
+	/**
+	 * Overrides BaseActorClass.createElement(). Create subclass of BaseActor for convenience.
+	 */
+	protected func Element createElement()
+		return VRPlayerActor.new(this)
+	end
+end

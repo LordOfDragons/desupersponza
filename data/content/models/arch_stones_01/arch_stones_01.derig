@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rig>
+	<mass>1</mass>
+	<centralMassPoint x='0' y='0' z='0'/>
+	<box>
+		<position x='-6.042' y='0.8804' z='0.002922'/>
+		<halfExtends x='0.488' y='0.2259' z='0.3982'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-6.867' y='0.6725' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='3.52e-06' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-7.513' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='6.21e-06' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-7.836' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='7.58e-06' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-5.233' y='0.6742' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='180' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-4.584' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='-180' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-4.261' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='-180' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-1.997' y='0.8804' z='0.002922'/>
+		<halfExtends x='0.488' y='0.2259' z='0.3982'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-2.822' y='0.6725' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='3.52e-06' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-3.468' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='6.21e-06' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-3.791' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='7.58e-06' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-1.188' y='0.6742' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='180' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-0.5393' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='-180' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='-0.2164' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='-180' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='2.026' y='0.8804' z='0.002922'/>
+		<halfExtends x='0.488' y='0.2259' z='0.3982'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='1.201' y='0.6725' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='3.52e-06' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='0.5552' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='6.21e-06' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='0.2323' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='7.58e-06' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='2.835' y='0.6742' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='180' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='3.484' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='-180' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='3.807' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='-180' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='6.057' y='0.8804' z='0.002922'/>
+		<halfExtends x='0.488' y='0.2259' z='0.3982'/>
+		<rotation x='0' y='-0' z='-0'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='5.231' y='0.6725' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='3.52e-06' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='4.586' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='6.21e-06' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='4.263' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='7.58e-06' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='6.866' y='0.6742' z='0.002922'/>
+		<halfExtends x='0.4861' y='0.2092' z='0.3982'/>
+		<rotation x='-8.52e-07' y='180' z='-27.2'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='7.514' y='0.1158' z='0.002922'/>
+		<halfExtends x='0.4925' y='0.2092' z='0.3982'/>
+		<rotation x='-3.14e-06' y='-180' z='-53.7'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+	<box>
+		<position x='7.837' y='-0.6259' z='0.002922'/>
+		<halfExtends x='0.4292' y='0.2092' z='0.3982'/>
+		<rotation x='-6.35e-06' y='-180' z='-79.9'/>
+		<property>arch_stone_wall_01</property>
+	</box>
+</rig>

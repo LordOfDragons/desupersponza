@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<elementClass name="lamp_1stfloor_entrance" class="SSLamp">
+	<string name="component.model">lamp_1stfloor_entrance.demodel</string>
+	<string name="component.rig">lamp_1stfloor_entrance.derig</string>
+	<string name="component.skin">lamp.deskin</string>
+	<string name="component.audioModel">lamp_1stfloor_entrance.demodel</string>
+	<boolean name="light.activated">false</boolean>
+	<vector name="light.position" x="0" y="-0.62" z="0"/>
+	<float name="light.intensity">0.75</float>
+	<float name="light.range">8</float>
+	<float name="light.halfIntensityDistance">0.2</float>
+	<color name="light.color" r="1" g="0.9" b="0.75"/>
+	<string name="renderableLight.renderableIntensity">light.intensity</string>
+	<float name="renderableLight.scaleIntensity">1</float>
+	<string name="renderableLight.renderableColor">light.color</string>
+	<map name="component.textureReplacements">
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="lamp_glass_01">
+			<string key="skin">/content/materials/lamp_glass_01/material.deskin</string>
+		</map>
+	</map>
+</elementClass>

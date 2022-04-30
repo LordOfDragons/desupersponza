@@ -1,0 +1,120 @@
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2022 DragonDreams GmbH
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+pin Dragengine.Scenery
+pin Dragengine.Preloading
+pin Dragengine.Utils
+
+/**
+ * Player action.
+ */
+class PlayerAction extends BAAFirstPerson implements BAAInteract
+	/**
+	 * Factory for creating action.
+	 */
+	public class Factory implements ECBehaviorActorAIAction.ActionFactory
+		public func new()
+		end
+		
+		public func BaseActorAction createAction(ECBehaviorActorAIAction.Instance instance)
+			return PlayerAction.new()
+		end
+	end
+	
+	
+	public var ECBehaviorLookAt.Instance lookAt
+	
+	
+	/**
+	 * Create Action.
+	 */
+	public func new()
+	end
+	
+	
+	/**
+	 * Find and store behaviors. This is for convenience.
+	 */
+	protected func void initBehaviors()
+		super.initBehaviors()
+		
+		lookAt = (actor cast PlayerActor).lookAt
+	end
+	
+	
+	/**
+	 * Think on frame update.
+	 */
+	public func void think(float elapsed)
+		super.think(elapsed)
+		
+		footSteps()
+	end
+	
+	/**
+	 * Update foot steps.
+	 */
+	public func void footSteps()
+		// if going to stop moving stop foot steps. otherwise use the appropriate steps
+		if getLocomotion().getLocomotion().getAbsMovingSpeed() < 0.01
+			getFootSteps().clearActiveConfiguration()
+			
+		elif getPlayerInputMove().getRun()
+			getFootSteps().setActiveConfigurationWithID(PlayerActorClass.footstepsRun, true)
+			
+		else
+			getFootSteps().setActiveConfigurationWithID(PlayerActorClass.footstepsWalk, true)
+		end
+	end
+	
+	/**
+	 * Implements BAAInteract.primaryActionStart().
+	 */
+	public func void primaryActionStart()
+		var BehaviorElement target = lookAt.getLookAtBehaviorElement()
+		if target == null
+			return // Nothing of interest looked at
+		end
+		
+	end
+	
+	/**
+	 * Implements BAAInteract.primaryActionStop().
+	 */
+	public func void primaryActionStop()
+	end
+	
+	/**
+	 * Implements BAAInteract.secondaryActionStart().
+	 */
+	public func void secondaryActionStart()
+		
+	end
+	
+	/**
+	 * Implements BAAInteract.secondaryActionStop().
+	 */
+	public func void secondaryActionStop()
+	end
+end

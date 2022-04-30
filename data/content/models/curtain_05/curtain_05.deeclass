@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<elementClass name="curtain_05" class="SSElement">
+	<string name="component.model">curtain_05.demodel</string>
+	<string name="component.rig">/shareddata/models/ghostCollision.derig</string>
+	<string name="component.audioModel">curtain_05.demodel</string>
+	<string name="trigger(show)">@curtains.show</string>
+	<map name="component.textureReplacements">
+		<map key="metal_door_01">
+			<string key="skin">/content/materials/metal_door_01/material.deskin</string>
+		</map>
+		<map key="curtain_01">
+			<string key="skin">/content/materials/curtain_01/material.deskin</string>
+			<color key='tint' r='0.55' g='0.15' b='0.04'/>
+		</map>
+		<map key="curtain_03">
+			<string key="skin">/content/materials/curtain_01/material.deskin</string>
+			<color key='tint' r='0.02' g='0.34' b='0.4'/>
+		</map>
+	</map>
+</elementClass>
