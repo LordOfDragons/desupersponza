@@ -10,8 +10,6 @@ The scene has been edited with these changes:
 - Added environment map probes
 
 Todo:
-- Adding collision volumes (using triangle mesh collision for the time being)
-- Adding occlusion meshes (using no occlusion culling for the time being)
 - Adding choosable scene configurations for testing different graphical setups
 
 To test download the *.delga file and run it using Drag[en]gine Game Engine (https://dragondreams.ch/?page_id=152#downloads-dragengine).
