@@ -2,7 +2,7 @@
 <project>
 	<profile>
 		<name>Development</name>
-		<description>Development profile created by Template. In contrary to the release profile files under /develop are included for development game testing. A typical solution to running a development build is to use a subclass of GameApp (for example GameAppDevelop) modifying the base GameApp behavior to expose development and debugging features. If you do this you have to change the game object parameter in this profile. Furthermore you should exclude this subclass from the release build. Typically the file would be located in a /scripts/debug directory together with other debugging related scripts. This way you can exclude the entire directory from release builds.</description>
+		<description>Development profile.</description>
 		<scriptDirectory>/scripts</scriptDirectory>
 		<gameObject>GameApp</gameObject>
 		<pathConfig>/config</pathConfig>
@@ -10,7 +10,7 @@
 		<identifier>d90b457f-8847-1a19-8cdb-4c154d4443cd</identifier>
 		<aliasIdentifier>supersponza</aliasIdentifier>
 		<title>supersponza - Development</title>
-		<gameDescription>Development</gameDescription>
+		<gameDescription>Test project using the Super Sponza (2022) scene. For Super Sponza credits see file supersponza_credits_license.txt.</gameDescription>
 		<creator>DragonDreams</creator>
 		<website>https://dragondreams.ch</website>
 		<excludePattern>/scripts/testing</excludePattern>
@@ -18,7 +18,7 @@
 	</profile>
 	<profile>
 		<name>Release</name>
-		<description>Release profile created by Template. Excludes development files under /develop to produce a distribution ready DELGA file.</description>
+		<description>Release profile.</description>
 		<scriptDirectory>/scripts</scriptDirectory>
 		<gameObject>GameApp</gameObject>
 		<pathConfig>/config</pathConfig>
@@ -26,7 +26,7 @@
 		<identifier>d90b457f-8847-1a19-8cdb-4c154d4443cd</identifier>
 		<aliasIdentifier>supersponza</aliasIdentifier>
 		<title>supersponza</title>
-		<gameDescription/>
+		<gameDescription>Test project using the Super Sponza (2022) scene. For Super Sponza credits see file supersponza_credits_license.txt.</gameDescription>
 		<creator>DragonDreams</creator>
 		<website>https://dragondreams.ch</website>
 		<excludePattern>/develop</excludePattern>
