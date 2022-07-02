@@ -15,3 +15,6 @@ Todo:
 To test download the *.delga file and run it using Drag[en]gine Game Engine (https://dragondreams.ch/?page_id=152#downloads-dragengine).
 
 To edit the test scene download the repository and open the *.degp file using Drag[en]gine IGDE (https://dragondreams.ch/?page_id=152#downloads-igde).
+
+NOTE:
+Due to Github LFS quotas data objects are not included in the source code download only code. Use GIT client to fetch all data.
