@@ -18,3 +18,5 @@ To edit the test scene download the repository and open the *.degp file using Dr
 
 NOTE:
 Due to Github LFS quotas data objects are not included in the source code download only code. Use GIT client to fetch all data.
+To do this install GIT LFS then call:
+  git lfs pull --exclude=
